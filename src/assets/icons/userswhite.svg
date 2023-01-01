@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="users">
+    <path d="M0 0L300 0L300 300L0 300L0 0Z" id="Shape" fill="none" stroke="none" />
+    <path d="M62.5 87.5C62.5 59.8858 84.8858 37.5 112.5 37.5C140.114 37.5 162.5 59.8858 162.5 87.5C162.5 115.114 140.114 137.5 112.5 137.5C84.8858 137.5 62.5 115.114 62.5 87.5Z" id="Circle" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M37.5 262.5L37.5 237.5C37.5 209.886 59.8858 187.5 87.5 187.5L137.5 187.5C165.114 187.5 187.5 209.886 187.5 237.5L187.5 262.5" id="Shape" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M200 39.125C222.124 44.7896 237.598 64.7249 237.598 87.5625C237.598 110.4 222.124 130.335 200 136" id="Shape" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M262.5 262.5L262.5 237.5C262.37 214.807 246.973 195.048 225 189.375" id="Shape" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

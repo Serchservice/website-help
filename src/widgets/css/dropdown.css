@@ -1,0 +1,45 @@
+@import url(../../config/colors.css);
+
+.dropdown{
+    position: relative;
+    padding: 0.5rem;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    display: flex;
+    border-radius: 0.2rem;
+    flex-wrap: wrap;
+    width: 12rem;
+    cursor: pointer;
+    background-color: var(--serch-white-bg);
+    box-shadow: var(--serch-box-shadow);
+    transition: all .8s ease-out;
+}
+
+.close{
+    overflow: hidden;
+    height: 3rem;
+}
+
+.open{
+    overflow: auto;
+    height: auto;
+    width: 13rem;
+}
+
+.menuLink{
+    color: var(--serch-black-bg);
+    font-size: 0.95rem;
+    padding: 0.5rem 0rem;
+    display: block;
+    font-weight: 650;
+}
+
+.menuArrow{
+    padding: 0.6rem 0rem;
+    margin-right: 0.5rem;
+}
+
+.menuOpen{
+    opacity: 0;
+}

@@ -1,0 +1,127 @@
+@import url(../config/colors.css);
+
+.pageerror{
+    padding-bottom: 5rem;
+}
+
+.pageerror_img{
+    height: 300px;
+    background-image: url('../assets/404/heading.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.errorpage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.errorpage img{
+    width: 150px;
+}
+
+.errortext{
+    padding: 2rem;
+}
+
+.errortext h3{
+    font-size: 2rem;
+    color: var(--serch-black-bg);
+}
+
+.errortext p{
+    font-size: 1.5rem;
+    color: var(--serch-black-bg);
+}
+
+.redirectLinks{
+    padding: 0rem 2rem;
+    width: 100%;
+}
+
+.head{
+    display: flex;
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: row;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--serch-black-bg);
+    color: var(--serch-black-bg);
+    padding: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.head::after, .head::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--serch-black-bg);
+    transform: scaleX(0);
+    transition: all 1s;
+}
+
+.head::after{
+    top: -2px;
+    transform-origin: right;
+}
+
+.head::before{
+    bottom: -2px;
+    transform-origin: left;
+}
+
+.head:hover::after, .head:hover::before{
+    transform: scaleX(1);
+}
+
+.head:hover{
+    border-bottom: none;
+}
+
+/* .redirectLinks a::after, .redirectLinks a::before{
+    --size: calc(100% + 15px);
+    content: '';
+    position: absolute;
+    inset: 50% 0 0 50%;
+    translate: -50% -50%;
+    transition: all 0.35s;
+}
+
+.redirectLinks a::before{
+    width: var(--size);
+    height: 100%;
+    border-top: 2px solid var(--serch-black-bg);
+    border-bottom: 2px solid var(--serch-black-bg);
+    scale: .25 1;
+}
+
+.redirectLinks a::after{
+    width: 100%;
+    height: var(--size);
+    border-right: 2px solid var(--serch-black-bg);
+    border-left: 2px solid var(--serch-black-bg);
+    scale: 1 .25;
+}
+
+/* .redirectLinks a:hover{
+    /* background-color: var(--serch-lighter);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    animation: all 500ms ease-in;
+}
+
+.redirectLinks a:hover::after, .redirectLinks a:hover::before{
+    opacity: 1;
+    scale: 1;
+    border-radius: 3px;
+}
+
+.redirectLinks a:hover{
+    background-color: var(--serch-lighter);
+} */

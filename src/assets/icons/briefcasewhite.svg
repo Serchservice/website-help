@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="briefcase">
+    <path d="M0 0L300 0L300 300L0 300L0 0Z" id="Shape" fill="none" stroke="none" />
+    <path d="M37.5 137.5L37.5 112.5C37.5 105.596 39.9408 99.7039 44.8223 94.8223C49.7039 89.9408 55.5964 87.5 62.5 87.5L237.5 87.5C244.404 87.5 250.296 89.9408 255.178 94.8223C260.059 99.7039 262.5 105.596 262.5 112.5L262.5 225C262.5 231.904 260.059 237.796 255.178 242.678C250.296 247.559 244.404 250 237.5 250L62.5 250C55.5964 250 49.7039 247.559 44.8223 242.678C39.9408 237.796 37.5 231.904 37.5 225L37.5 137.5Z" id="Rectangle" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M100 87.5L100 62.5C100 48.6929 111.193 37.5 125 37.5L175 37.5C188.807 37.5 200 48.6929 200 62.5L200 87.5" id="Shape" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M150 150L150 175" id="Line" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M37.5 162.5C108.262 198.157 191.738 198.157 262.5 162.5" id="Shape" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

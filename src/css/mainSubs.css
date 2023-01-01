@@ -1,0 +1,63 @@
+@import url(../config/colors.css);
+
+.drop{
+    background-color: var(--serch-button-color);
+    padding: 1rem;
+    margin: 1rem 0rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    box-shadow: var(--serch-box-shadow);
+}
+
+.downSub{
+    height: 5rem;
+    overflow: hidden;
+    border-bottom: 2px solid var(--serch-black-bg);;
+    transition: all 1s;
+}
+
+.dropSub{
+    height: auto;
+    overflow: none;
+}
+
+.subCategory{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subSubCategory{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 1.5rem 0rem;
+    font-weight: 600;
+}
+
+.subSubCategory::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--serch-black-bg);
+    transform: scaleX(0);
+    transition: transform 1s;
+}
+
+.subSubCategory::after{
+    bottom: -2px;
+    transform-origin: left;
+}
+
+.subSubCategory:hover::after{
+    transform: scaleX(1);
+}
+
+.subSubCategory:hover{
+    border-bottom: none;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="friends">
+    <path d="M0 0L300 0L300 300L0 300L0 0Z" id="Shape" fill="none" stroke="none" />
+    <path d="M62.5 62.5C62.5 48.6929 73.6929 37.5 87.5 37.5C101.307 37.5 112.5 48.6929 112.5 62.5C112.5 76.3071 101.307 87.5 87.5 87.5C73.6929 87.5 62.5 76.3071 62.5 62.5Z" id="Circle" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M62.5 275L62.5 212.5L50 200L50 150C50 143.096 55.5964 137.5 62.5 137.5L112.5 137.5C119.404 137.5 125 143.096 125 150L125 200L112.5 212.5L112.5 275" id="Shape" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M187.5 62.5C187.5 48.6929 198.693 37.5 212.5 37.5C226.307 37.5 237.5 48.6929 237.5 62.5C237.5 76.3071 226.307 87.5 212.5 87.5C198.693 87.5 187.5 76.3071 187.5 62.5Z" id="Circle" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M187.5 275L187.5 225L162.5 225L187.5 150C187.5 143.096 193.096 137.5 200 137.5L225 137.5C231.904 137.5 237.5 143.096 237.5 150L262.5 225L237.5 225L237.5 275" id="Shape" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

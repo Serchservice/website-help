@@ -1,0 +1,100 @@
+@import url(../config/colors.css);
+
+.greyBg{
+    background-color: var(--serch-white-bg);
+    box-shadow: var(--serch-box-shadow);
+    display: block;
+    width: 11rem;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    transition: all 1s;
+}
+
+.desc{
+    padding: 2rem;
+}
+
+.descr{
+    margin: 0rem 0.5rem;
+}
+
+.greyBg h3{
+    color: var(--serch-black-bg);
+}
+
+.greyBg:hover{
+    background-color: var(--serch-black-bg);
+}
+
+.greyBg:hover img{
+    background-color: var(--serch-white-bg);
+    color: var(--serch-white-bg);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+
+.greyBg:hover h3{
+    color: var(--serch-white-bg);
+}
+
+.rowLinks{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--serch-white-bg);
+}
+
+.rightCorner, .leftCorner{
+    padding-bottom: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 650;
+}
+
+.leftCorner{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.rightCorner{
+    margin-right: 0.5rem;
+}
+
+.rowLink{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    font-size: 0.9rem;
+    padding-bottom: 0.2rem;
+    font-weight: 650;
+    color: var(--serch-black-bg);
+    border-bottom: 2px solid var(--serch-black-bg);
+}
+
+.rowLink::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--serch-black-bg);
+    transform: scaleX(0);
+    transition: transform 1s;
+}
+
+.rowLink::after{
+    bottom: -2px;
+    transform-origin: left;
+}
+
+.rowLink:hover::after{
+    transform: scaleX(1);
+}
+
+.rowLink:hover{
+    border-bottom: none;
+}
