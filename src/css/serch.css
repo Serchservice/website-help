@@ -1,5 +1,6 @@
 @import url(../config/colors.css);
 
+
 .support_section{
     padding: 2rem;
     position: relative;
@@ -8,6 +9,7 @@
 
 .serch{
     position: relative;
+    /* background-color: red; */
 }
 
 .help{
@@ -185,6 +187,8 @@
     text-align: center;
     border-bottom: 2px solid var(--serch-bg-color);
     margin: 4rem 10rem 1rem;
+    /* testing for mobile */
+    /* background-color: red; */
 }
 
 .planheader h2{
@@ -195,4 +199,30 @@
 .planheader p{
     color: var(--serch-virgo-color);
     margin: 0rem 0rem 0.5rem 0rem;
+}
+
+@media screen and (max-width: 768px) {
+    .keyHeader{
+        flex-direction: column-reverse;
+        
+    }
+    .serchhub{
+        display: none;
+    }
+    .planheader {
+        text-align: center;
+        border-bottom: 2px solid var(--serch-bg-color);
+        margin: 0;
+        /* testing for mobile */
+        /* background-color: red; */
+    }
+    .welcometext{
+        display: none;
+    }
+    
+.keyArrowBack{
+    display: none;
+   
+}
+    
 }

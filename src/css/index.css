@@ -12,6 +12,8 @@ body {
   background: var(--serch-white-bg);
   -webkit-user-select: none;
   user-select: none;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 
 textarea{
