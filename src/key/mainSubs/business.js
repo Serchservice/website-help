@@ -27,7 +27,7 @@ export const BusinessSubCategories = () => {
     return(subCategory
         ?   <div className="serch">
                 <header className="header">
-                    <div className="logo unknown">
+                    <div className="logo">
                         <a href={ MainLinks.home }> <img alt="" src={ Images.serch.serchLogo } width={30} height={30} /> </a>
                     </div>
                     {

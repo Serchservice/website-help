@@ -99,7 +99,7 @@ export const Description = () => {
             <div className="desc">
                 <div className="rowLinks">
                     <h3>{sub.title}</h3>
-                    <h3 className="descr">/</h3>
+                    <h3 className="desc">/</h3>
                     <h3>{section.title}</h3>
                 </div>
                 {section.desc}

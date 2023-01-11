@@ -60,9 +60,9 @@ export const ClientSubCategories = () => {
                 <div className="support_section">
                     <div className="keyHeader">
                         <div className="keyHead">
-                            <div className="rowLinks">
+                            <div className="rowLinks" >
                                 <p className="rightCorner">{'>'}</p>
-                                <Link to={`/${HelpLinks.clients}`} className="rowLink"> Request/Clients </Link>
+                                <Link to={`/${HelpLinks.clients}`} className="rowLink" > Request/Clients </Link>
                                 <p className="leftCorner">{'>'}</p>
                                 <Link to={`/${HelpLinks.clients}/${id}`} className="rowLink"> {subCategory.title} </Link>
                             </div>
@@ -73,7 +73,7 @@ export const ClientSubCategories = () => {
                         </a>
                     </div>
                 </div>
-                <div className="subLinks" style={{backgroundColor:'red'}}>
+                <div className="subLinks" >
                     {
                         subCategory.subLinks.map((link, index) => {
                             return <div key={index}
