@@ -27,7 +27,7 @@ export const BusinessSubCategories = () => {
     return(subCategory
         ?   <div className="serch">
                 <header className="header">
-                    <div className="logo">
+                    <div className="logo unknown">
                         <a href={ MainLinks.home }> <img alt="" src={ Images.serch.serchLogo } width={30} height={30} /> </a>
                     </div>
                     {
@@ -65,7 +65,7 @@ export const BusinessSubCategories = () => {
                         </div>
                         <a href={ "/" } className="keyArrowBack">
                             <img alt="" src={ Icons.arrowLeft } width={25} />
-                            <h3>Back to Help Hub</h3>
+                            <h3 className="">Back to Help Hub</h3>
                         </a>
                     </div>
                 </div>

@@ -6,7 +6,9 @@
     position: relative;
     background-color: var(--serch-white-bg);
 }
-
+.unknown{
+    background-color: blue;
+}
 .serch{
     position: relative;
     /* background-color: red; */
@@ -112,7 +114,8 @@
 
 .categories{
     padding: 2rem;
-    background-color: var(--serch-white-bg);
+    /* background-color: var(--serch-white-bg); */
+    background-color: blue;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

@@ -73,7 +73,7 @@ export const ClientSubCategories = () => {
                         </a>
                     </div>
                 </div>
-                <div className="subLinks">
+                <div className="subLinks" style={{backgroundColor:'red'}}>
                     {
                         subCategory.subLinks.map((link, index) => {
                             return <div key={index}

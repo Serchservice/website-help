@@ -27,6 +27,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .subSubCategory{
@@ -36,6 +37,7 @@
     position: relative;
     margin: 1.5rem 0rem;
     font-weight: 600;
+
 }
 
 .subSubCategory::after{
@@ -52,6 +54,7 @@
 .subSubCategory::after{
     bottom: -2px;
     transform-origin: left;
+
 }
 
 .subSubCategory:hover::after{
