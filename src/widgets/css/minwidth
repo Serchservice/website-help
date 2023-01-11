@@ -1,4 +1,5 @@
 @import url(../../config/colors.css);
+
 .footer {
     background-color: var(--serch-bg-color);
     width: 100%;
@@ -26,8 +27,6 @@
 
 .footerlist {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .footer a {
@@ -54,6 +53,7 @@
 .company, .product, .support, .pricing {
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin: 0rem 1rem;
 }
 
@@ -85,8 +85,7 @@
 
 .footerbottom {
     align-items: center;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
     margin-top: 2rem;
 }
 
@@ -103,8 +102,7 @@
     width: -moz-fit-content;
     width: fit-content;
 }
-@media screen and (max-width:768px){
-
+@media screen and (max-width:768px) {
     .footer {
        
         padding: 0.1rem;
@@ -153,15 +151,5 @@
        
         margin-top: 2rem;
     }
-    .footerbottom {
-      flex-direction: column;
-    }
-} 
-@media screen and (max-width:768px){
-
-.logo img{
-    /* flex-direction: column; */
-    /* width: 10px; */
-    /* height: auto; */
-}
+    
 }

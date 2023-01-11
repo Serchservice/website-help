@@ -65,7 +65,7 @@ export const BusinessSubCategories = () => {
                         </div>
                         <a href={ "/" } className="keyArrowBack">
                             <img alt="" src={ Icons.arrowLeft } width={25} />
-                            <h3>Back to Help Hub</h3>
+                            <h3 className="">Back to Help Hub</h3>
                         </a>
                     </div>
                 </div>

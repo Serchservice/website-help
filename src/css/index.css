@@ -12,6 +12,9 @@ body {
   background: var(--serch-white-bg);
   -webkit-user-select: none;
   user-select: none;
+  scroll-behavior: smooth;
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
 }
 
 textarea{
@@ -33,6 +36,7 @@ code {
   list-style: none;
   appearance: none;
   box-sizing: border-box;
+  /* transition:  0.3s ease-in-out; */
 }
 
 a{
@@ -174,4 +178,37 @@ button:hover{
 .button:hover{
   color: var(--serch-white-bg);
   transition-delay: .5s;
+}
+@media screen and (max-width:768px) {
+ a{ 
+  font-size: 0.8rem;
+ 
+}
+
+h1{
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--serch-black-bg);
+}
+
+h2{
+  font-size: 1.2rem;
+  color: var(--serch-black-bg);
+}
+
+h3{
+  font-size: 0.9rem;
+  color: var(--serch-black-bg);
+}
+
+h4{
+  font-size: 0.8rem;
+  color: var(--serch-black-bg);
+}
+
+h5{
+  font-size: 0.77rem;
+  color: var(--serch-black-bg);
+}
+  
 }

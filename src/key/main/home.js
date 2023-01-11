@@ -8,14 +8,14 @@ export const HelpHomeHeader = () => {
     return (
         <div className="support_section">
             <div className="keyHeader">
-                <h2>Serch Help Hub</h2>
+                <h2 className="serchhub">Serch Help Hub</h2>
                 <a href={ MainLinks.helpAndSupport } className="keyArrowBack">
                     <img alt="" src={ Icons.arrowLeft } width={30} />
                     <h3>Back to Help and Support</h3>
                 </a>
             </div>
             <div className="planheader">
-                <h2>Welcome to Serch Help Hub</h2>
+                <h2 className="welcometext">Welcome to Serch Help Hub</h2>
                 <p>How can we help you today?</p>
             </div>
         </div>
