@@ -26,6 +26,8 @@
 
 .footerlist {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .footer a {
@@ -52,7 +54,6 @@
 .company, .product, .support, .pricing {
     display: flex;
     flex-direction: column;
-    width: 100%;
     margin: 0rem 1rem;
 }
 
