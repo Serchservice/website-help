@@ -146,7 +146,6 @@
     align-items: center;
     width: -moz-fit-content;
     width: fit-content;
-    position: relative;
     color: var(--serch-black-bg);
     border-bottom: 2px solid var(--serch-black-bg);
 }
@@ -205,11 +204,12 @@
 @media screen and (max-width: 768px) {
     .keyHeader{
         flex-direction: column-reverse;
-        
     }
+
     .serchhub{
         display: none;
     }
+
     .planheader {
         text-align: center;
         border-bottom: 2px solid var(--serch-bg-color);
@@ -217,13 +217,12 @@
         /* testing for mobile */
         /* background-color: red; */
     }
+
     .welcometext{
         display: none;
     }
-    
-.keyArrowBack{
-    display: none;
-   
-}
-    
+
+    .keyArrowBack{
+        display: none;
+    }
 }

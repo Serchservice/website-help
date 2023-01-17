@@ -1,9 +1,13 @@
 :root{
-    --serch-bg-color: #000000;
+    --serch-bg-color: #030001;
 
-    --serch-white-bg: #ffffff;
-    --serch-black-bg: #000000;
+    --serch-white-bg: #fafafa;
+    --serch-black-bg: #030001;
     --serch-lighter: #eeeeee;
+
+    --serch-light-purple: #6C0062;
+    --serch-dark-theme: #07070A;
+    --serch-dark-purple: #3F0F36;
 
     --serch-light-link: #ffffff;
     --serch-link-hover: #bdbdbd;

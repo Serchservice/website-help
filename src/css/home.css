@@ -48,17 +48,19 @@
 
 .rightCorner, .leftCorner{
     padding-bottom: 0.2rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 650;
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
 }
 
 .leftCorner{
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
 }
 
 .rightCorner{
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
 }
 
 .rowLink{
@@ -67,7 +69,6 @@
     align-items: center;
     width: -moz-fit-content;
     width: fit-content;
-    position: relative;
     font-size: 0.9rem;
     padding-bottom: 0.2rem;
     font-weight: 650;

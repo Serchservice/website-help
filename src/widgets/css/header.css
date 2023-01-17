@@ -24,16 +24,16 @@
 
 .DropDown{
     position: absolute;
-    padding: 0.5rem;
+    padding: 0rem 0.2rem;
     text-align: left;
     align-items: flex-start;
     right: 2vw;
-    top: 1vh;
+    top: 1.3vh;
     justify-content: space-evenly;
     display: flex;
     border-radius: 0rem;
     flex-wrap: wrap;
-    width: 12rem;
+    width: 11rem;
     cursor: pointer;
     background-color: var(--serch-white-bg);
     box-shadow: var(--serch-box-shadow);
@@ -42,7 +42,7 @@
 
 .closeDrop{
     overflow: hidden;
-    height: 3rem;
+    height: 2.5rem;
 }
 
 .openDrop{
@@ -64,5 +64,16 @@
         width: 100%;
         padding: 0.8rem 0.5rem;
     }
-    
+
+    .DropDown{
+        padding: 0.1rem;
+        width: 9rem;
+        height: 2.5rem;
+        top: 1.5vh;
+    }
+
+    .menuLink{
+        font-size: 0.85rem !important;
+        /* padding: 0.8rem 0rem !important; */
+    }
 }
