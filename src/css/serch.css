@@ -3,7 +3,6 @@
 
 .support_section{
     padding: 2rem;
-    position: relative;
     background-color: var(--serch-white-bg);
 }
 
@@ -130,9 +129,10 @@
 
 .keyHeader{
     display: flex;
-    position: relative;
     justify-content: space-between;
     align-items: baseline;
+    padding: 2rem;
+    background-color: var(--serch-white-bg);
 }
 
 .keyHead{
@@ -144,10 +144,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: -moz-fit-content;
-    width: fit-content;
+    /* width: -moz-fit-content;
+    width: fit-content; */
     color: var(--serch-black-bg);
     border-bottom: 2px solid var(--serch-black-bg);
+    cursor: pointer;
+    width: auto;
+    position: relative;
+    padding-bottom: 0.2rem;
+    margin-bottom: 1.5rem;
 }
 
 .keyArrowBack::after{
@@ -158,7 +163,7 @@
     height: 2px;
     background-color: var(--serch-black-bg);
     transform: scaleX(0);
-    transition: all 1s;
+    transition: transform 1s;
 }
 
 .keyArrowBack::after{
@@ -204,6 +209,10 @@
 @media screen and (max-width: 768px) {
     .keyHeader{
         flex-direction: column-reverse;
+    }
+
+    .support_section, .subLinks{
+        padding: 1rem;
     }
 
     .serchhub{

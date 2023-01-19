@@ -6,9 +6,9 @@ import { CategoryImages, Icons, Images } from "../../config/assets";
 import { HelpCategoryLinks, HelpLinks, MainLinks } from "../../config/links/links";
 import { Title } from "../../config/custom/titleheader";
 import { Footer } from "../../widgets/contents/widgets";
-import { NoPage } from "../main/main";
+import { NoPage } from "./main";
 
-export const ClientSubCategories = () => {
+export const SubBusinessCategories = () => {
     const { id } = useParams();
     const [open, setOpen] = useState(false);
     const [openSection, setOpenSection] = useState(-1);
@@ -16,15 +16,19 @@ export const ClientSubCategories = () => {
     const [subCategory, setSubCategory] = useState(null);
     const [questionMenu, setQuestionMenu] = useState(false);
     const [subSub, setSubSub] = useState(null);
+    const [finalSub, setFinalSub] = useState(null);
 
     useEffect(() => {
         let category = HelpCategoryLinks.find(help => help.id);
         let subCategory = category.subLinks.find(help => help.id === id);
         let subSub = subCategory.subLinks.find(sub => sub);
+        let finalSub = subSub.subLinks.find(sub => sub);
         if(subCategory){
             setCategory(category);
+            console.log(finalSub, category.id)
             setSubCategory(subCategory);
             setSubSub(subSub);
+            setFinalSub(finalSub);
         }
     }, [id]);
 
@@ -33,76 +37,10 @@ export const ClientSubCategories = () => {
     const toggleQuestionMenu = () => setQuestionMenu(!questionMenu);
 
     subCategory ? Title(`${subCategory.title} || Serch Help`) : Title("Serch || Expecting you back");
-    return(subCategory
-        ?   <div className="serch">
-                <div className="mobileHeader">
-                    <header className="headerMobile">
-                        <div className="logo">
-                            <a href={ MainLinks.home }> <img alt="" src={ Images.serch.serchLogo } width={30} height={30} /> </a>
-                        </div>
-                        {
-                            open
-                            ?   <div className={open ? 'openDrop DropDown' : "closeDrop DropDown"} onClick={()=>setOpen(!open)}>
-                                    <div className="menu">
-                                        <Link to={`/${category.id}`} className="menuLink">{category.title}</Link>
-                                        <Link to={`/${HelpLinks.providers}`} className="menuLink">Provide/Providers</Link>
-                                        <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
-                                    </div>
-                                    <img alt="arrow" src={ open ? Icons.arrowUp : Icons.closeIcon } width={18} className="menuArrow"/>
-                                </div>
-                            :   <div className={open ? 'openDrop DropDown' : "closeDrop DropDown"} onClick={()=>setOpen(!open)}>
-                                    <div className="menu">
-                                        <article className="menuLink">{category.title}</article>
-                                    </div>
-                                    <img alt="arrow"
-                                        src={ open ? Icons.closeIcon : Icons.arrowDown }
-                                        width={18} className="menuArrow"
-                                    />
-                                </div>
-                        }
-                        <div className={questionMenu ? "openQuestion Menu" : "closeQuestion Menu"}>
-                            {
-                                subCategory.subLinks.map((link, index) => {
-                                    return <div key={index}
-                                        className={ "dropSub drop" }
-                                        onClick={() => toogle(index)}
-                                    >
-                                        <div className="subCategory">
-                                            <h3 id={link.id}> {link.title} </h3>
-                                            <img alt="" src={ openSection === index ? Icons.minus : Icons.plus } width={15} />
-                                        </div>
-                                        {
-                                            link.subLinks.map((item, index) => {
-                                                return <Link to={`/${HelpLinks.clients}/${id}/section/${item.id}`} key={index}
-                                                    className="subSubCategory"
-                                                >
-                                                    {item.title}
-                                                    <img alt="" src={Icons.arrowRighty} width={20}/>
-                                                </Link>
-                                            })
-                                        }
-                                    </div>
-                                })
-                            }
-                        </div>
-                    </header>
-                    <div className="keyHeaderMobile">
-                        <div className="mobileRowLinks">
-                            <div className="mobileLists"><img alt="" src={CategoryImages.option} onClick={toggleQuestionMenu}/></div>
-                            <div className="rowLinks" >
-                                <p className="rightCorner">{'||'}</p>
-                                <Link to={`/${HelpLinks.clients}`} className="rowLink" > Request/Clients </Link>
-                                <p className="leftCorner">{'||'}</p>
-                                <Link to={`/${HelpLinks.clients}/${id}`} className="rowLink"> {subCategory.title} </Link>
-                            </div>
-                        </div>
-                        <a href={ "/" } className="keyArrowBack">
-                            <img alt="" src={ Icons.arrowLeft } width={25} />
-                            <h3>Back to Help Hub</h3>
-                        </a>
-                    </div>
-                </div>
-                <header className="headerTablet">
+    return(
+        subCategory ? <div className="serch">
+            <div className="mobileHeader">
+                <header className="headerMobile">
                     <div className="logo">
                         <a href={ MainLinks.home }> <img alt="" src={ Images.serch.serchLogo } width={30} height={30} /> </a>
                     </div>
@@ -119,8 +57,6 @@ export const ClientSubCategories = () => {
                         :   <div className={open ? 'openDrop DropDown' : "closeDrop DropDown"} onClick={()=>setOpen(!open)}>
                                 <div className="menu">
                                     <article className="menuLink">{category.title}</article>
-                                    <article className="menuLink">Provide/Providers</article>
-                                    <article className="menuLink">Business</article>
                                 </div>
                                 <img alt="arrow"
                                     src={ open ? Icons.closeIcon : Icons.arrowDown }
@@ -128,16 +64,10 @@ export const ClientSubCategories = () => {
                                 />
                             </div>
                     }
-                </header>
-                <div className="subCategoryLinks" >
-                    <div className="questionsGrid">
-                        <div className="keyHeadTablet">
-                            <div className="rowLinks" >
-                                <p className="rightCorner">{'||'}</p>
-                                <Link to={`/${HelpLinks.clients}`} className="rowLink" > Request/Clients </Link>
-                                <p className="leftCorner">{'||'}</p>
-                                <Link to={`/${HelpLinks.clients}/${id}`} className="rowLink"> {subCategory.title} </Link>
-                            </div>
+                    <div className={questionMenu ? "openQuestion Menu" : "closeQuestion Menu"}>
+                        <div className="arrowKeyBack" onClick={toggleQuestionMenu}>
+                            <img alt="" src={ Icons.arrowLeft } width={18} />
+                            <h5>Back</h5>
                         </div>
                         {
                             subCategory.subLinks.map((link, index) => {
@@ -147,7 +77,6 @@ export const ClientSubCategories = () => {
                                 >
                                     <div className="subCategory">
                                         <h3 id={link.id}> {link.title} </h3>
-                                        <img alt="" src={ openSection === index ? Icons.minus : Icons.plus } width={15} />
                                     </div>
                                     {
                                         link.subLinks.map((item, index) => {
@@ -163,41 +92,92 @@ export const ClientSubCategories = () => {
                             })
                         }
                     </div>
-                    <div className="answersGrid">
-                        <div className="keyHeaderTablet">
-                            <a href={ "/" } className="keyArrowBack">
-                                <img alt="" src={ Icons.arrowLeft } width={25} />
-                                <h3>Back to Help Hub</h3>
-                            </a>
-                        </div>
-                        {
-                            subCategory.subLinks.map((link, index) => {
-                                return <div key={index}
-                                    className={ openSection === index ? "dropSub drop" : "downSub drop" }
-                                    onClick={() => toogle(index)}
-                                >
-                                    <div className="subCategory">
-                                        <h3 id={link.id}> {link.title} </h3>
-                                        <img alt="" src={ openSection === index ? Icons.minus : Icons.plus } width={15} />
-                                    </div>
-                                    {
-                                        link.subLinks.map((item, index) => {
-                                            return <Link to={`/${HelpLinks.clients}/${id}/section/${item.id}`} key={index}
-                                                className="subSubCategory"
-                                            >
-                                                {item.title}
-                                                <img alt="" src={Icons.arrowRighty} width={20}/>
-                                            </Link>
-                                        })
-                                    }
-                                </div>
-                            })
-                        }
+                </header>
+                <div className="mobileRowLinks">
+                    <div className="mobileLists"><img alt="" src={CategoryImages.option} onClick={toggleQuestionMenu}/></div>
+                    <div className="rowLinks" >
+                        <p className="rightCorner">{'||'}</p>
+                        <Link to={`/${HelpLinks.clients}`} className="rowLink" > Request/Clients </Link>
+                        <p className="leftCorner">{'||'}</p>
+                        <Link to={`/${HelpLinks.clients}/${id}`} className="rowLink"> {subCategory.title} </Link>
                     </div>
                 </div>
-                <Footer />
             </div>
-        : <NoPage />
+            <header className="headerTablet">
+                <div className="logo">
+                    <a href={ MainLinks.home }> <img alt="" src={ Images.serch.serchLogo } width={30} height={30} /> </a>
+                </div>
+                {
+                    open
+                    ?   <div className={open ? 'openDrop DropDown' : "closeDrop DropDown"} onClick={()=>setOpen(!open)}>
+                            <div className="menu">
+                                <Link to={`/${category.id}`} className="menuLink">{category.title}</Link>
+                                <Link to={`/${HelpLinks.providers}`} className="menuLink">Provide/Providers</Link>
+                                <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
+                            </div>
+                            <img alt="arrow" src={ open ? Icons.arrowUp : Icons.closeIcon } width={18} className="menuArrow"/>
+                        </div>
+                    :   <div className={open ? 'openDrop DropDown' : "closeDrop DropDown"} onClick={()=>setOpen(!open)}>
+                            <div className="menu">
+                                <article className="menuLink">{category.title}</article>
+                                <article className="menuLink">Provide/Providers</article>
+                                <article className="menuLink">Business</article>
+                            </div>
+                            <img alt="arrow"
+                                src={ open ? Icons.closeIcon : Icons.arrowDown }
+                                width={18} className="menuArrow"
+                            />
+                        </div>
+                }
+            </header>
+            <div className="subCategoryLinks" >
+                <div className="questionsGrid">
+                    <div className="keyHeadTablet">
+                        <div className="rowLinks" >
+                            <p className="rightCorner">{'||'}</p>
+                            <Link to={`/${HelpLinks.clients}`} className="rowLink" > Request/Clients </Link>
+                            <p className="leftCorner">{'||'}</p>
+                            <Link to={`/${HelpLinks.clients}/${id}`} className="rowLink"> {subCategory.title} </Link>
+                        </div>
+                    </div>
+                    {
+                        subCategory.subLinks.map((link, index) => {
+                            return <div key={index} className={"dropSub drop"}>
+                                <div className="subCategory">
+                                    <h3 id={link.id}> {link.title} </h3>
+                                </div>
+                                {
+                                    link.subLinks.map((item, index) => {
+                                        return <Link to={`/${HelpLinks.clients}/${id}/section/${item.id}`} key={index}
+                                            className="subSubCategory"
+                                        >
+                                            {item.title}
+                                            <img alt="" src={Icons.arrowRighty} width={20}/>
+                                        </Link>
+                                    })
+                                }
+                            </div>
+                        })
+                    }
+                </div>
+                <div className="answersGrid">
+                    <div className="keyHeaderTablet">
+                        <a href={ "/" } className="keyArrowBack">
+                            <img alt="" src={ Icons.arrowLeft } width={25} />
+                            <h3>Back to Help Hub</h3>
+                        </a>
+                    </div>
+                    <div className="rowLinks" >
+                        <p className="rightCorner">{'||'}</p>
+                        <div className="rowLink"> {subSub.title} </div>
+                        <p className="leftCorner">{'||'}</p>
+                        <Link to={`/${HelpLinks.clients}/${id}/section/${finalSub.id}`} className="rowLink"> {finalSub.title} </Link>
+                    </div>
+                    finalSub.desc
+                </div>
+            </div>
+            <Footer />
+        </div> : <NoPage />
     );
 }
 

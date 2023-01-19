@@ -5,7 +5,6 @@ import {
 } from "./subProviders"
 
 export const ProvidersHelpLinks = {
-    providers: '/providers/:id/',
     accountApp: 'account-and-app-issues',
     earningsPayment: 'earnings-and-payment',
     providingGuide: 'a-guide-to-skills-or-talent-providing',

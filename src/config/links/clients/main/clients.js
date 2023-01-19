@@ -4,7 +4,6 @@ import {
 } from "./subClients"
 
 export const ClientsHelpLinks = {
-    clients: '/clients/:id/',
     accountPayment: 'account-and-payment-options',
     more: 'more',
     serchGuide: 'your-guide-in-serch',

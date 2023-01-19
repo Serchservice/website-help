@@ -96,7 +96,7 @@
     box-shadow: var(--serch-box-shadow-two);
     border-radius: 0.2rem;
     margin: 2rem;
-    padding: .5rem 1rem;
+    padding: 1rem 1rem;
     align-items: center;
     position: relative;
     justify-content: space-between;
@@ -124,35 +124,40 @@
 
 @media screen and (max-width:768px) {
     .serchGrey{
-    
-    margin: 2rem;
-    padding: .5rem 1rem;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
+        margin: 1rem;
+        padding: 1rem 1rem;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
+
     .searchBox{
         padding: 0rem 0rem 0rem 0.5rem;
-        margin: 0rem 2rem;
+        margin: 0rem 1rem;
     }
+
     .serchGrey h2{
-        font-size: 1.5rem;
-        word-wrap: normal;        text-align: center;
-      }
-      h3{
+        margin-block-start: 0rem;
+        margin-block-end: 0.5rem;
+        word-wrap: normal;
+        font-size: medium;
+        text-align: center;
+    }
+
+    h3{
         font-size: 0.9rem;
-      }
-      .flex{
+    }
+
+    .flex{
         align-items: center;
         justify-content: flex-start;
         flex-direction: column;
         gap: 0.5rem;
         font-size: 1rem !important;
     }
+
     ::placeholder{
         font-size: 1rem;
-
     }
 
 }

@@ -2,7 +2,6 @@ import { CategoryImages } from "../../../assets"
 import { BusinessAccountAndBilling, BusinessSchedule, BusinessSignUp, BusinessDashBoard } from "./subBusiness"
 
 export const BusinessHelpLinks = {
-    business: '/business/:id/',
     accountBilling: 'account-and-billing',
     serviceSchedule: 'managing-service-schedule',
     signingUp: 'signing-up-in-serch-business',
