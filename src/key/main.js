@@ -1,14 +1,15 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Outlet } from "react-router-dom";
 import {
     AppLinks, CompanyLinks, HelpCategoryLinks, HelpLinks, InformationLinks, MainLinks, ProductLinks, SupportLinks
-} from "../../config/links/links";
-import { Title } from "../../config/custom/titleheader";
-import { Footer, Header } from "../../widgets/contents/widgets";
-import '../../css/404.css';
+} from "../config/links/links";
+import { Title } from "../config/custom/titleheader";
+import { Footer, Header } from "../widgets/contents/widgets";
+import '../css/404.css';
 import { HelpHomeBody, HelpHomeHeader } from "./home";
 import { useEffect, useState } from "react";
-import { Icons } from "../../config/assets";
-import { Download, SearchBar } from "../../widgets/contents/searchbar";
+import { Icons } from "../config/assets";
+import { Download, SearchBar } from "../widgets/contents/searchbar";
+import { FullPageShimmer } from "../widgets/contents/shimmer";
 
 export const Help = () => {
     Title('Serch || Help Hub');
@@ -52,20 +53,38 @@ export const NoPage = () => {
 }
 
 export const HelpCategories = () => {
-    const { id } = useParams();
+    return(
+        <>
+            <Outlet />
+        </>
+    );
+}
+
+export const HelpCategoriesIndex = () => {
+    const { category } = useParams();
     const [help, setHelp] = useState(null);
     const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [noPage, setNoPage] = useState(false);
 
     useEffect(() => {
-        let helper = HelpCategoryLinks.find(help => help.id === id);
+        setLoading(true)
+        let helper = HelpCategoryLinks.find(help => help.id === category);
 
         if(helper){
+            setNoPage(false)
+            setLoading(false)
             setHelp(helper);
+        } else {
+            setLoading(false)
+            setNoPage(true)
         }
-    }, [id]);
+    }, [category]);
 
-    help ? Title(`${help.title} || Serch Help`) : Title("Serch || Expecting you back");
-    if(help != null) {
+    help != null && loading !== true && noPage !== true ? Title(`${help.title} || Serch Help`)
+    : loading !== true && noPage !== false ? Title("Serch || Expecting you back") : Title("Loading || Serch Help");
+
+    if(help != null && loading !== true && noPage !== true) {
         return(
             <div className="serch">
                 <Header />
@@ -100,19 +119,13 @@ export const HelpCategories = () => {
                                     help.title === 'Request/Clients'
                                     ?   <div className="menu">
                                             <article className="menuLink">{help.title}</article>
-                                            <article className="menuLink">Provide/Providers</article>
-                                            <article className="menuLink">Business</article>
                                         </div>
                                     : help.title === 'Provide/Providers'
                                     ?   <div className="menu">
                                             <article className="menuLink">{help.title}</article>
-                                            <article className="menuLink">Request/Clients</article>
-                                            <article className="menuLink">Business</article>
                                         </div>
                                     :   <div className="menu">
                                             <article className="menuLink">{help.title}</article>
-                                            <article className="menuLink">Request/Clients</article>
-                                            <article className="menuLink">Provide/Providers</article>
                                         </div>
                                 }
                                 <img alt="arrow" src={ open ? Icons.arrowUp : Icons.arrowDown } width={18} className="menuArrow"/>
@@ -154,7 +167,9 @@ export const HelpCategories = () => {
                 <Footer />
             </div>
         );
-    } else {
+    } else if(loading !== true && noPage !== false) {
         return <NoPage />
+    } else {
+        return <FullPageShimmer />
     }
 }

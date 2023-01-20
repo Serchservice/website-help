@@ -144,8 +144,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: -moz-fit-content;
-    width: fit-content; */
     color: var(--serch-black-bg);
     border-bottom: 2px solid var(--serch-black-bg);
     cursor: pointer;

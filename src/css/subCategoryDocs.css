@@ -2,21 +2,19 @@
 
 @media screen and (min-width:768px){
     .subCategoryLinks{
-        /* display: grid; */
         display: flex;
         width: 100%;
         padding: 0rem 1rem 1rem 1rem;
-        /* grid-gap: 1.5rem;
-        grid-template-columns: 25rem auto; */
-        /* border-top: 0.2rem solid var(--serch-dark-theme); */
+    }
+
+    .subCategoryLinks main{
+        width: 100%;
     }
 
     .questionsGrid{
-        /* max-height: 100vh; */
         padding-right: 0.5rem;
         margin-right: 1rem;
         overflow-y: scroll;
-        /* width: 30rem; */
         border-right: 2px solid var(--serch-black-bg);
     }
 
@@ -152,8 +150,9 @@
         border-radius: 0rem;
         flex-wrap: wrap;
         max-width: 20rem;
-        height: 100vh;
+        height: 92.4%;
         left: -200%;
+        top: 7.6%;
         overflow-y: auto;
         background-color: var(--serch-white-bg);
         box-shadow: var(--serch-box-shadow);

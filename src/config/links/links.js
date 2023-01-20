@@ -71,17 +71,12 @@ export const LegalLinks = {
 }
 
 export const HelpLinks = {
-    categories: "/:id/",
-    subCategories: "/:id/:id/",
+    categories: ":category",
+    subCategories: ":section",
+    description: ':questionSection/:question',
     business: 'business',
-    subBusinessCategories: "/business/:id/",
-    businessDescription: '/business/:id/section/:id/',
     providers: 'providers',
-    subProviderCategories: "/providers/:id/",
-    providerDescription: '/providers/:id/section/:id/',
     clients: 'clients',
-    subClientCategories: "/clients/:id//*",
-    clientDescription: '/clients/:id/section/:id/',
 }
 
 export const HelpCategoryLinks = [

@@ -1,7 +1,7 @@
-import { Icons } from "../../config/assets";
-import '../../css/serch.css';
-import '../../css/home.css';
-import { HelpCategoryLinks, MainLinks } from "../../config/links/links";
+import { Icons } from "../config/assets";
+import '../css/serch.css';
+import '../css/home.css';
+import { HelpCategoryLinks, MainLinks } from "../config/links/links";
 import { Link } from "react-router-dom";
 
 export const HelpHomeHeader = () => {

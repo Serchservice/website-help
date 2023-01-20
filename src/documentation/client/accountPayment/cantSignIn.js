@@ -1,13 +1,13 @@
 // npm i markdown-to-jsx
-// import { useState, useEffect } from 'react';
-// import Markdown from 'markdown-to-jsx';
-// import mdDocument from './document.md';
+import { useState, useEffect } from 'react';
+import Markdown from 'markdown-to-jsx';
+import clientSubscriptionNotSuccessful from '../../../markdown/client/accountPayment/subscriptionNotSuccessful.md';
 
 // const App = () => {
 //   const [content, setContent] = useState("");
 
 //   useEffect(() => {
-//     fetch(mdDocument)
+//     fetch(ClientSubscriptionNotSuccessful)
 //       .then(res => res.text())
 //       .then(md => { setContent(md) })
 //   })
@@ -17,7 +17,19 @@
 //   )
 // }
 
-export const ClientSubscriptionNotSuccessful = () => {}
+export const ClientSubscriptionNotSuccessful = () => {
+    const [content, setContent] = useState("");
+
+    useEffect(() => {
+        fetch(clientSubscriptionNotSuccessful)
+        .then(res => res.text())
+        .then(md => { setContent(md) })
+    })
+
+    return (
+        <div><Markdown children={content} /></div>
+    )
+}
 
 export const ClientTroubleShootingVerify = () => {}
 
