@@ -3,63 +3,60 @@ import { useState } from "react";
 import '../css/searchbar.css';
 import { Icons } from '../../config/assets';
 
-export const SearchBar = ({ placeholder, data}) => {
-    const [filteredData, setFilteredData] = useState([]);
-    // const [searchData, setSearchData] = useState([]);
-    // const [enteredData, setEnteredData] = useState([]);
+export const SearchBar = ({ placeholder, data, category}) => {
+    const [results, setResults] = useState([])
+    const [query, setQuery] = useState("")
 
-    // const handleChange = (e) => {
-    //     e.preventDefault();
-    //     handleSearchResults();
-    //     setSearchData(e.target.value);
-    // }
-
-    // const handleSearchResults = ({data}) => {
-    //     const searching = data;
-    //     const filtered = searching.filter(dt => dt.title.toLowerCase().includes(
-    //         search.toLowerCase().trim()
-    //     ))
-    // }
-
-    // const handleFilter = (event) => {
-    //     const searchWord = event.target.value;
-    //     const newFilter = data.filter((value) => {
-    //         return value.hint.toLowerCase().includes(searchWord.toLowerCase());
-    //     });
-    //     if(searchWord === "") {
-    //         setFilteredData([]);
-    //         setEnteredData(searchWord);
-    //     } else {
-    //         setFilteredData(newFilter);
-    //         setEnteredData(searchWord);
-    //     }
-    // }
-
-    const clear = () => {
-        // setFilteredData([]);
-        // setEnteredData("");
+    const handleSearch = (event) => {
+        event.preventDefault();
+        let filteredData = [];
+        //Iterating over the outermost array
+        for (let first = 0; first < data.length; first++){
+            for (let second = 0; second < data[first].length; second++){
+                for (let third = 0; third < data[first][second].length; third++){
+                    for (let fourth = 0; fourth < data[first][second][third].length; fourth++){
+                        if(Object.values(data[first][second][third][fourth].some(
+                            value => typeof value === 'string' && value.toLowerCase().includes(query.toLowerCase)
+                        ))){
+                            filteredData.push(data[first][second][third][fourth])
+                        }
+                    }
+                }
+            }
+        }
+        setResults(filteredData);
     }
 
     return (
         <div className='search'>
             <div className="searchBox">
-                <img alt="" src={ Icons.searchIcon } width={20} />
-                <input type="Search" placeholder={ placeholder }
-                    /*value={ "searchData" }*/
-                    onChange={ "handleChange" }
-                    // onChange={ handleFilter } /*value={enteredData}*/
-                />
-                <div>
-                    <img src={filteredData.length === 0 ? null : Icons.closeIcon} alt="" width={20} onClick={() => clear}/>
+                <div className="searchInput">
+                    <div className="searchInputAndIcon">
+                        <img alt="" src={ Icons.searchIcon } width={30} height={30}/>
+                        <input type="text" placeholder={placeholder} value={query} onChange={(e) => setQuery(e.target.value)} />
+                    </div>
+                    <img src={query.length === 0 ? "" : Icons.closeIcon} alt="" width={15} height={15} onClick={() => setQuery([])}/>
                 </div>
-                <div className="searchBtn">
+                <div className="searchBtn" onClick={handleSearch}>
                     <h3>Search</h3>
                 </div>
             </div>
-            {
-                filteredData.length !== 0 && (
+            {/* <form className="searchBox" onSubmit={handleSearch}>
+                <div className="searchInput">
+                    <div className="searchInputAndIcon">
+                        <img alt="" src={ Icons.searchIcon } width={30} height={30}/>
+                        <input type="text" placeholder={placeholder} value={query} onChange={e => setQuery(e.target.value)} />
+                    </div>
+                    <img src={query.length === 0 ? null : Icons.closeIcon} alt="" width={15} height={15} onClick={() => setQuery([])}/>
+                </div>
+                <button className="searchBtn" type='submit'>
+                    <h3>Search</h3>
+                </button>
+            </form> */}
+            {/* {
+                results.length !== 0 && (
                     <div className='searchOptions'>
-                        {filteredData.slice(0, 5).map(value => {
+                        {results.slice(0, 5).map(value => {
                             return <Link to={ value.link } className="searchData" key={ value.id } >
                                 <h4 className='searchHead'> { value.title } </h4>
                                 <p> { value.anotherhint } </p>
@@ -67,7 +64,16 @@ export const SearchBar = ({ placeholder, data}) => {
                         })}
                     </div>
                 )
-            }
+
+                results.map(result => (
+                    <div key={result.id}>
+                        <h2>{result.title}</h2>
+                        <p>{result.description}</p>
+                        <p>{result.author}</p>
+                        <Link to={result.link} target="_blank" rel="noopener noreferrer">More</Link>
+                    </div>
+                ))
+            } */}
         </div>
     );
 }

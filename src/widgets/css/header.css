@@ -65,15 +65,8 @@
         padding: 0.8rem 0.5rem;
     }
 
-    .DropDown{
-        padding: 0.1rem;
-        width: 9rem;
-        height: 2.5rem;
-        top: 1.5vh;
-    }
-
-    .menuLink{
+    /* .menuLink{
         font-size: 0.85rem !important;
-        /* padding: 0.8rem 0rem !important; */
-    }
+        padding: 0.8rem 0rem !important;
+    } */
 }

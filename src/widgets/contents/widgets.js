@@ -46,9 +46,8 @@ export const Footer = () => {
                 </div>
                 <a href={ MainLinks.home }><img alt='' src={ Images.serch.serchLogoName } /></a>
             </div>
-            
+
             <div className='footerlist'>
-                
                 <div className='company'>
                     <h2>Company</h2>
                     <a href={ CompanyLinks.about } className="pageLink">About Us</a>

@@ -1,141 +1,148 @@
+import ClientCantSignInIssues from "../subLinks/accountPayment/signinIssues";
+import ClientChangeAccountIssues from "../subLinks/accountPayment/changeaccountIssues";
+import ClientPaymentIssues from "../subLinks/accountPayment/paymentIssues";
+import ClientRewardIssues from "../subLinks/accountPayment/rewardIssues";
+import ClientDataRequestIssues from "../subLinks/accountPayment/requestdataIssues";
+import ClientUnknownChargeIssues from "../subLinks/accountPayment/unknownIssues";
+
+import ClientSafetyIssues from "../subLinks/help/safetyIssues";
+import ClientUnprofessionalIssues from "../subLinks/help/unprofessionIssues";
+import ClientHelpDifferentIssues from "../subLinks/help/differentIssues";
+import ClientFAQIssues from "../subLinks/help/faqIssues";
+import ClientProviderSkillIssues from "../subLinks/help/skillIssues";
+
+import ClientLegalPrivacyIssues from "../subLinks/more/legalPrivacyIssues";
+import ClientGuestRequestIssues from "../subLinks/more/guestRequestIssues";
+import ClientServiceRequestIssues from "../subLinks/more/serviceRequestIssues";
+import { ClientAfterServiceTripIssues, ClientOnServiceTripIssues } from "../subLinks/more/serviceTripIssues";
+
+import { ClientAccountCreateIssues, ClientSignUpToProvideIssues } from "../subLinks/signup/accountCreateIssues";
 import {
-    ClientAfterMyServiceTrip, ClientGuestRequestSection, ClientLegalPrivacySection,
-    ClientOnAServiceTrip, ClientRequestingForAService
-} from "../subLinks/moreGuide";
-import {
-    ClientCantSignInSection, ClientChangingAccountSettingSection, ClientPaymentOptionSection,
-    ClientRequestingDataSection, ClientRewardsSection, ClientUnknownChargeSection
-} from "../subLinks/accountPayment";
-import {
-    ClientAccessibilityAtSerchSection, ClientCommunicateProblemProviderSection, ClientCreatingClientAccountSection,
-    ClientDownloadUserClientAppSection, ClientHowToUseVoiceTextSection, ClientSignUpToProvideSection
-} from "../subLinks/signUp";
-import {
-    ClientFAQSection, ClientHadADifferentSection, ClientProviderDidNotArriveSection, ClientProviderNotSkilledEnoughSection,
-    ClientSafetySection, ClientUnprofessionalSection
-} from "../subLinks/help";
+    ClientAccessibilityAtSerchIssues, ClientCommunicateProblemProviderIssues, ClientDownloadUserClientAppIssues,
+    ClientHowToUseVoiceTextIssues
+} from "../subLinks/signup/accessibilityIssues";
 
 export const ClientAccountAndPayment = [
     {
         title: 'I can\'t sign in or request a service',
-        subLinks: ClientCantSignInSection
+        subLinks: ClientCantSignInIssues
     },
     {
         title: 'Changing my account settings',
-        subLinks: ClientChangingAccountSettingSection
+        subLinks: ClientChangeAccountIssues
     },
     {
         title: 'Payment Options',
-        subLinks: ClientPaymentOptionSection
+        subLinks: ClientPaymentIssues
     },
     {
         title: 'Promos, Credits and partnerships',
-        subLinks: ClientRewardsSection
+        subLinks: ClientRewardIssues
     },
     {
         title: 'Requesting Data as Card Issuer',
-        subLinks: ClientRequestingDataSection
+        subLinks: ClientDataRequestIssues
     },
     {
         title: 'I have an unknown charge',
-        subLinks: ClientUnknownChargeSection
+        subLinks: ClientUnknownChargeIssues
     }
 ]
 
 export const ClientMore = [
     {
         title: 'Legal, Privacy and other Inquiries',
-        subLinks: ClientLegalPrivacySection
+        subLinks: ClientLegalPrivacyIssues
     },
     {
         title: 'Guest requests',
-        subLinks: ClientGuestRequestSection
+        subLinks: ClientGuestRequestIssues
     },
 ]
 
 export const ClientGuide = [
     {
         title: 'Requesting for a service',
-        subLinks: ClientRequestingForAService
+        subLinks: ClientServiceRequestIssues
     },
     {
         title: 'On a service trip',
-        subLinks: ClientOnAServiceTrip
+        subLinks: ClientOnServiceTripIssues
     },
     {
         title: 'After my service trip',
-        subLinks: ClientAfterMyServiceTrip
+        subLinks: ClientAfterServiceTripIssues
     },
 ]
 
 export const ClientRewards = [
-    {
-        title: 'I can\'t sign in or request a service',
-        subLinks: "MoreOne"
-    },
-    {
-        title: 'I can\'t sign in or request a service',
-        subLinks: "MoreTwo"
-    },
-    {
-        title: 'I can\'t sign in or request a service',
-        subLinks: "MoreThree"
-    }
+    // {
+    //     title: 'I can\'t sign in or request a service',
+    //     subLinks: "MoreOne"
+    // },
+    // {
+    //     title: 'I can\'t sign in or request a service',
+    //     subLinks: "MoreTwo"
+    // },
+    // {
+    //     title: 'I can\'t sign in or request a service',
+    //     subLinks: "MoreThree"
+    // }
 ]
 
 export const ClientSignUp = [
     {
         title: 'Creating a client account',
-        subLinks: ClientCreatingClientAccountSection
+        subLinks: ClientAccountCreateIssues
     },
     {
         title: 'Downloading the user/client app',
-        subLinks: ClientDownloadUserClientAppSection
+        subLinks: ClientDownloadUserClientAppIssues
     },
     {
         title: 'Signing up to provide',
-        subLinks: ClientSignUpToProvideSection
+        subLinks: ClientSignUpToProvideIssues
     }
 ]
 
 export const ClientAccessibility = [
     {
         title: 'How to Use VoiceText',
-        subLinks: ClientHowToUseVoiceTextSection
+        subLinks: ClientHowToUseVoiceTextIssues
     },
     {
         title: 'How to communicate problems to a provider',
-        subLinks: ClientCommunicateProblemProviderSection
+        subLinks: ClientCommunicateProblemProviderIssues
     },
     {
         title: 'Accessibility at Serch',
-        subLinks: ClientAccessibilityAtSerchSection
+        subLinks: ClientAccessibilityAtSerchIssues
     }
 ]
 
 export const ClientHelp = [
     {
         title: 'Safety',
-        subLinks: ClientSafetySection
+        subLinks: ClientSafetyIssues
     },
     {
         title: 'My provider was unprofessional',
-        subLinks: ClientUnprofessionalSection
+        subLinks: ClientUnprofessionalIssues
     },
     {
         title: 'I had a different issue',
-        subLinks: ClientHadADifferentSection
+        subLinks: ClientHelpDifferentIssues
     },
     {
         title: 'Frequently Asked Questions',
-        subLinks: ClientFAQSection
+        subLinks: ClientFAQIssues
     },
-    {
-        title: 'My provider did not arrive',
-        subLinks: ClientProviderDidNotArriveSection
-    },
+    // {
+    //     title: 'My provider did not arrive',
+    //     subLinks: ClientProviderDidNotArriveSection
+    // },
     {
         title: 'My provider was not skilled enough',
-        subLinks: ClientProviderNotSkilledEnoughSection
+        subLinks: ClientProviderSkillIssues
     }
 ]

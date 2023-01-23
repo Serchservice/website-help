@@ -1,0 +1,10 @@
+@import url(../../config/colors.css);
+
+.notFound{
+    width: 100%;
+    padding: 2rem;
+}
+
+.notFound h2{
+    padding: 1rem 0rem;
+}

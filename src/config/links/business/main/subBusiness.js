@@ -1,64 +1,61 @@
-import {
-    BusinessAccountSettingsandIssuesSection, BusinessFeesandChargeSection, BusinessPaymentOptionsSection
-} from "../subLinks/accountBilling"
-import { BusinessIssuesArrangingServiceSection, BusinessRequesstingandSchedulingSection } from "../subLinks/schedule"
-import {
-    BusinessBusinessAccountPrivacySection, BusinessHowtoSignUpSection, BusinessIsSoftwareRequiredSection,
-    BusinessManagingEmployeesSection, BusinessNotificationsSection, BusinessViewingAccountActivitySection
-} from "../subLinks/signUpDashboard"
+import { BusinessAccountSettingIssues } from "../subLinks/accountAndBilling/accountIssues"
+import { BusinessFeesandChargeIssues, BusinessPaymentIssues } from "../subLinks/accountAndBilling/paymentIssues"
+import { BusinessAccountPrivacyIssues, BusinessHowtoSignUpIssues, BusinessIsSoftwareRequiredIssues, BusinessNotificationIssues, BusinessViewingAccountActivityIssues } from "../subLinks/dashboard/dashboardIssues"
+import BusinessEmployeesManagementIssues from "../subLinks/dashboard/manageIssues"
+import { BusinessArrangingServiceIssues, BusinessRequestandScheduleIssues } from "../subLinks/schedule/scheduleIssues"
 
 export const BusinessAccountAndBilling = [
     {
         title: 'Payment options',
-        subLinks: BusinessPaymentOptionsSection
+        subLinks: BusinessPaymentIssues
     },
     {
         title: 'Account settings and issues',
-        subLinks: BusinessAccountSettingsandIssuesSection
+        subLinks: BusinessAccountSettingIssues
     },
     {
         title: 'Fees and charges',
-        subLinks: BusinessFeesandChargeSection
+        subLinks: BusinessFeesandChargeIssues
     }
 ]
 
 export const BusinessSchedule = [
     {
         title: 'Requesting and scheduling services',
-        subLinks: BusinessRequesstingandSchedulingSection
+        subLinks: BusinessRequestandScheduleIssues
     },
     {
         title: 'Issues arranging services',
-        subLinks: BusinessIssuesArrangingServiceSection
+        subLinks: BusinessArrangingServiceIssues
     },
 ]
 
 export const BusinessSignUp = [
     {
         title: 'How to sign up for Serch for Business',
-        subLinks: BusinessHowtoSignUpSection
+        subLinks: BusinessHowtoSignUpIssues
     },
     {
         title: 'Is software installation required to use Serch for Business',
-        subLinks: BusinessIsSoftwareRequiredSection
+        subLinks: BusinessIsSoftwareRequiredIssues
     },
     {
         title: 'Business account privacy and security',
-        subLinks: BusinessBusinessAccountPrivacySection
+        subLinks: BusinessAccountPrivacyIssues
     }
 ]
 
 export const BusinessDashBoard = [
     {
         title: 'Viewing account activity',
-        subLinks: BusinessViewingAccountActivitySection
+        subLinks: BusinessViewingAccountActivityIssues
     },
     {
         title: 'What notifications can I receive on the dashboard?',
-        subLinks: BusinessNotificationsSection
+        subLinks: BusinessNotificationIssues
     },
     {
         title: 'Managing employees',
-        subLinks: BusinessManagingEmployeesSection
+        subLinks: BusinessEmployeesManagementIssues
     },
 ]

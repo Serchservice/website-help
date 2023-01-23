@@ -3,27 +3,19 @@
 .drop{
     background-color: var(--serch-button-color);
     padding: 1rem;
+    height: auto;
+    overflow: none;
     margin: 1rem 0rem;
     border-radius: 0.2rem;
     cursor: pointer;
     box-shadow: var(--serch-box-shadow);
 }
 
-.downSub{
-    height: 4rem;
-    padding: 0.8rem;
-    overflow: hidden;
-}
-
-.downSub h3{
+.drop h3{
     margin-block-start: 0.4em;
     margin-block-end: 0.4em;
 }
 
-.dropSub{
-    height: auto;
-    overflow: none;
-}
 
 .subCategory{
     display: flex;

@@ -86,12 +86,12 @@ export const HelpCategoryLinks = [
         title: 'Request/Clients',
         subLinks: ClientLinks,
     },
-    {
-        id: HelpLinks.business,
-        image: Icons.business,
-        title: 'Business',
-        subLinks: BusinessLinks,
-    },
+    // {
+    //     id: HelpLinks.business,
+    //     image: Icons.business,
+    //     title: 'Business',
+    //     subLinks: BusinessLinks,
+    // },
     {
         id: HelpLinks.providers,
         image: Icons.providers,

@@ -205,16 +205,12 @@
 }
 
 @media screen and (max-width: 768px) {
-    .keyHeader{
+    /* .keyHeader{
         flex-direction: column-reverse;
-    }
+    } */
 
     .support_section, .subLinks{
         padding: 1rem;
-    }
-
-    .serchhub{
-        display: none;
     }
 
     .planheader {
@@ -225,11 +221,21 @@
         /* background-color: red; */
     }
 
-    .welcometext{
-        display: none;
+    .support_section .keyHeader .keyArrowBack{
+        display: flex;
+    }
+
+    .support_section .keyHeader{
+        padding: 2rem 0rem;
     }
 
     .keyArrowBack{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .support_section .keyHeader .keyArrowBack{
         display: none;
     }
 }

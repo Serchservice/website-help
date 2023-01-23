@@ -1,10 +1,16 @@
 @import url(../config/colors.css);
 
+.blur{
+    filter: blur(5px);
+    /* -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); */
+}
+
 @media screen and (min-width:768px){
     .subCategoryLinks{
         display: flex;
         width: 100%;
-        padding: 0rem 1rem 1rem 1rem;
+        padding: 0rem 1rem 0rem 1rem;
     }
 
     .subCategoryLinks main{
@@ -12,7 +18,7 @@
     }
 
     .questionsGrid{
-        padding-right: 0.5rem;
+        padding-right: 1rem;
         margin-right: 1rem;
         overflow-y: scroll;
         border-right: 2px solid var(--serch-black-bg);
@@ -146,7 +152,7 @@
         text-align: left;
         align-items: flex-start;
         justify-content: space-evenly;
-        display: flex;
+        /* display: flex; */
         border-radius: 0rem;
         flex-wrap: wrap;
         max-width: 20rem;
@@ -188,7 +194,7 @@
         transform: scaleX(0);
         transition: all 1s;
     }
-    
+
     .arrowKeyBack::after{
         bottom: -2px;
         transform-origin: right;
@@ -221,5 +227,20 @@
 
     .answersGrid{
         padding: 0rem 1rem;
+    }
+
+    .mobileQuestion{
+        width: 100%;
+        background-color: var(--serch-button-color);
+        padding: 1rem;
+        margin: 0.5rem 0rem;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        box-shadow: var(--serch-box-shadow);
+    }
+
+    .mobileQuestion h3{
+        margin-block-start: 0.4em;
+        margin-block-end: 0.4em;
     }
 }
