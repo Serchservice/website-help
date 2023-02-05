@@ -54,6 +54,7 @@ export const Images = {
     },
     serch: {
         serchLogo: require('../assets/logo/Logowhite.png'),
-        serchLogoName: require('../assets/logo/serchblack1.jpg'),
+        serchLogoName: require('../assets/logo/logoAndName.png'),
+        serchTagline: require('../assets/logo/taglineWhite.png'),
     }
 }

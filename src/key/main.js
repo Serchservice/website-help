@@ -14,12 +14,12 @@ import { FullPageShimmer } from "../widgets/contents/shimmer";
 export const Help = () => {
     Title('Serch || Help Hub');
     return (
-        <div className="serch">
+        <>
             <Header />
             <HelpHomeHeader />
             <HelpHomeBody />
             <Footer />
-        </div>
+        </>
     );
 }
 
@@ -86,7 +86,7 @@ export const HelpCategoriesIndex = () => {
 
     if(help != null && loading !== true && noPage !== true) {
         return(
-            <div className="serch">
+            <>
                 <Header />
                 <div className="keyHeader">
                     <div className="keyHead">
@@ -165,7 +165,7 @@ export const HelpCategoriesIndex = () => {
                     }
                 </div>
                 <Footer />
-            </div>
+            </>
         );
     } else if(loading !== true && noPage !== false) {
         return <NoPage />

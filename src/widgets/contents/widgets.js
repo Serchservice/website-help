@@ -1,108 +1,114 @@
-import '../css/footer.css';
-import '../css/header.css';
-import '../css/dropdown.css';
+import '../css/widget.css';
 import { Link } from "react-router-dom";
-import {
-    AppLinks, CompanyLinks, InformationLinks, LegalLinks,
-    MainLinks, ProductLinks, SocialLinks, SupportLinks
-} from '../../config/links/links';
-import { Emails } from '../../config/custom/emails';
+import { AppLinks, MainLinks } from '../../config/links/links';
 import { Images } from '../../config/assets';
+import { FooterDocumentLinks, FooterLinks, SerchAppDownloadLinks, SocialMediaLinks } from './pageWidgetLinks';
 
-
-export const Header = () => {
+export const Header = ({pagetitle, pagedescription}) => {
     return (
-        <header className="header">
-            <div className="logo">
-                <a href={ MainLinks.home }> <img alt="" src={ Images.serch.serchLogo } width={30} height={30} /> </a>
+        <header style={{backgroundColor: "#030001", padding: pagetitle ? "0.8rem 0.9rem" : ""}}>
+            <div style={{
+                display: "flex", alignItems: "center", justifyContent: "space-between", padding: pagetitle ? "" : "0.8rem 0.9rem"
+            }}>
+                <div className="logo">
+                    <Link to={ MainLinks.home }> <img alt="Serch Logo" src={ Images.serch.serchLogo } width={40} height={40} /> </Link>
+                </div>
+                <div className="headerlinks" style={{justifyContent: "space-between",}}>
+                    <Link to={ AppLinks.loginUser } style={{margin: "0.5rem", fontSize: "1rem"}}>Login</Link>
+                    <Link to={ AppLinks.signupUser } style={{margin: "0.5rem", fontSize: "1rem"}}>Signup</Link>
+                </div>
             </div>
-            <div className="headerlinks">
-                <a href={ AppLinks.loginUser }>Login</a>
-                <a href={ AppLinks.signupUser }>Signup</a>
-            </div>
+            {
+                pagetitle ? <>
+                    <h2 style={{color: "#FAFAFA"}}>{pagetitle}</h2>
+                    <p style={{color: "#FAFAFA"}}>{pagedescription}</p>
+                </> : null
+            }
         </header>
     );
 }
 
 export const Footer = () => {
-    const getTime = new Date();
-    const getHours = getTime.getHours();
-    var getGreeting = () => {
-        if(getHours < 12) {
-            return "It's a new day. Let's make the most of it.";
-        } else if(getHours === 12 && getHours < 18) {
-            return "The day is not over. We can always start now.";
-        }else if (getHours <= 21) {
-            return "It's not over until you say it's over. Go all in now!";
-        }else {
-            return "Rest is as always important as your life is.";
-        }
-    }
     return (
-        <footer className="footer">
-            <div className="logo">
-                <div className="greeting">
-                    <h3 style={{color:"white"}}>{getGreeting()}</h3>
-                </div>
-                <a href={ MainLinks.home }><img alt='' src={ Images.serch.serchLogoName } /></a>
+        <footer style={{backgroundColor: "#030001", width: "100%"}} className="footer">
+            <div className="footer-logo" style={{display: "flex", flexWrap: "wrap",}}>
+                <img alt='Serch Tagline' src={ Images.serch.serchTagline }
+                    style={{width: "150px", borderRadius: "0.8rem"}} className="upper-tagline"
+                />
+                <Link to={ MainLinks.home }>
+                    <img alt='Serch Logo' src={ Images.serch.serchLogoName } style={{
+                        width: "150px", borderRadius: "0.8rem"
+                    }} />
+                </Link>
+                <img alt='Serch Tagline' src={ Images.serch.serchTagline }
+                    style={{width: "150px", borderRadius: "0.8rem"}} className="lower-tagline"
+                />
             </div>
-
-            <div className='footerlist'>
-                <div className='company'>
-                    <h2>Company</h2>
-                    <a href={ CompanyLinks.about } className="pageLink">About Us</a>
-                    <a href={ CompanyLinks.blog } className="pageLink">Blog</a>
-                    <a href={ CompanyLinks.newsroom } className="pageLink">Newsroom</a>
-                    <a href={ CompanyLinks.marketplace } className="pageLink">Marketplace </a>
-                    <a href={ CompanyLinks.careers } className="pageLink">Careers</a>
-                </div>
-                <div className='product'>
-                    <h2>Product</h2>
-                    <a href={ ProductLinks.business } className="pageLink">Serch for Business</a>
-                    <a href={ ProductLinks.request } className="pageLink">Request</a>
-                    <a href={ ProductLinks.provide } className="pageLink">Provide</a>
-                </div>
-                <div className='pricing'>
-                    <h2>Information</h2>
-                    <a href={ InformationLinks.docs } className="pageLink">Documentation</a>
-                    <a href={ InformationLinks.safety } className="pageLink">Safety guidelines</a>
-                    <a href={ InformationLinks.payment } className="pageLink">Pricing &  Payment Methods</a>
-                    <a href={ InformationLinks.countries } className="pageLink">Countries in Serch</a>
-                </div>
-                <div className='support'>
-                    <h2>Help and Support</h2>
-                    <a href={ SupportLinks.legal } className="pageLink">Legal Hub</a>
-                    <Link to={ SupportLinks.help } className="pageLink">Help Hub</Link>
-                    <a href={ SupportLinks.support } className="pageLink">Support Hub</a>
-                    <a href={ Emails.improve } className="pageLink">Improve our services</a>
-                    <a href={ Emails.report } className="pageLink">Report a broken feature</a>
-                </div>
+            <div className='company-footer-links' style={{
+                display: "flex", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between"
+            }}>{
+                FooterLinks.map((item, index) => {
+                    if(item.section.includes("Help")){
+                        return <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                        }} key={index} className="company-links">
+                            <h2 style={{color: "#bdbdbd"}}>{item.section}</h2>
+                            {
+                            item.link.map((item, index) => {
+                                if(index === 1 || index === 3 || index === 4){
+                                    return <a href={ item.link } key={index} className="pageLink">{item.title}</a>
+                                } else {
+                                    return <Link to={ item.link } key={index} className="pageLink">{item.title}</Link>
+                                }
+                            })
+                        }
+                        </div>
+                    } else {
+                        return <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                        }} key={index} className="company-links">
+                            <h2 style={{color: "#bdbdbd"}}>{item.section}</h2>
+                            {
+                                item.link.map((item, index) => {
+                                    return <Link to={ item.link } key={index} className="pageLink">{item.title}</Link>
+                                })
+                            }
+                        </div>
+                    }
+                })
+            }</div>
+            <div className='external-links' style={{
+                display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between"
+            }}>
+                <div style={{
+                    display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between",
+                }}>{
+                    SerchAppDownloadLinks.map((item, index) => {
+                        return <a href={item.link} key={index} style={{padding: "0.2rem"}}>
+                            <img alt={item.imageAlt} src={item.image} height={item.height} style={{width: "100%"}} />
+                        </a>
+                    })
+                }</div>
+                <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between"}}>{
+                    SocialMediaLinks.map((item, index) => {
+                        return <a href={item.link} key={index} style={{padding: "0.2rem"}}>
+                            <img alt={item.imageAlt} src={item.image} className="external-links-social" />
+                        </a>
+                    })
+                }</div>
             </div>
-            <div>
-            <div className='footerlinks'>
-                    <div className='app'>
-                        <a href={ AppLinks.playStore }><img alt='' src={ Images.app.playStore } /> </a>
-                        <a href={ AppLinks.appleStore }><img alt='' src={ Images.app.appleStore } /> </a>
-                    </div>
-                    <div className='socialmedia'>
-                        <a href={ SocialLinks.twitter }><img alt='' src={ Images.social.twitter } /> </a>
-                        <a href={ SocialLinks.facebook }><img alt='' src={ Images.social.facebook } /> </a>
-                        <a href={ Emails.help }><img alt='' src={ Images.social.gmail } /> </a>
-                        <a href={ SocialLinks.instagram }><img alt='' src={ Images.social.instagram } /> </a>
-                        <a href={ SocialLinks.linkedIn }><img alt='' src={ Images.social.linkedIn } /> </a>
-                    </div>
-               </div>
-
-            </div>
-            <div className='footerbottom'>
-                <div className='policy'>
-                    <a href={ LegalLinks.privacyPolicy } className="pageLink">Privacy </a>
-                    <a href={ LegalLinks.termsAndConditions } className="pageLink">Terms </a>
-                    <a href={ LegalLinks.accessibility } className="pageLink">Accessibility</a>
-                </div>
-                <div className='bottom'>
-                    <p>2022 Serch Inc. Tech.</p>
-                </div>
+            <div style={{alignItems: "center", textAlign: "center"}}>
+                <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", marginTop: "0.8rem"}}>{
+                    FooterDocumentLinks.map((item, index) => {
+                        return <a href={item.link} style={{
+                            color: "#bdbdbd",
+                            margin: "0.5rem"
+                        }} className="footer-document-link" key={index}>{item.name}</a>
+                    })
+                }</div>
+                <p style={{marginTop: "0.8rem", color: "#bdbdbd"}}>2022 Serch Inc. Tech.</p>
             </div>
         </footer>
     );

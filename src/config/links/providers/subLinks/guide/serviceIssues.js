@@ -70,14 +70,14 @@ export const ProviderFromChatToServiceIssues = [
     },
 ]
 
-export const ProviderReceivingRequestIssues = {
+export const ProviderReceivingRequestIssues = [{
     id: '33774675490364174b-3811-411a-927a-9648ff',
     title: 'Canceling a request',
     desc: cancelRequest
-}
+}]
 
-export const ProviderProvideShareIssues = {
+export const ProviderProvideShareIssues = [{
     id: '1987263104468102a1-7dcc-4d68-a7c9-9678d4',
     title: 'What is Serch ProvideShare?',
     desc: provideShare
-}
+}]

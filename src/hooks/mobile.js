@@ -15,17 +15,15 @@ export default function useComponentVisible() {
         if (!ref.current.contains(event.target)) {
             setIsVisible(false);
         }
-        console.log(ref)
     };
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
-
         return () => {
-        document.removeEventListener(
-            "mousedown",
-            handleClickOutside
-        );
+            document.removeEventListener(
+                "mousedown",
+                handleClickOutside
+            );
         };
     });
 

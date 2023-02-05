@@ -40,8 +40,14 @@ export const SubCategories = () => {
             setNoPage(true)
             setLoading(false)
         }
-        setIsVisible(false);
-    }, [category, section, first, second, setIsVisible]);
+        // if(isVisible){
+        //     document.getElementById('blurr').style.filter = 'blur(5px)';
+        //     document.getElementById('blurred').style.filter = 'blur(5px)';
+        // } else {
+        //     document.getElementById('blurr').style.filter = 'blur(0px) grayscale(0%)';
+        //     document.getElementById('blurred').style.filter = 'blur(0px) grayscale(0%)'
+        // }
+    }, [category, section, first, second, isVisible]);
 
     function openAndClose(index) {
         setOpenSection(index);
@@ -65,7 +71,7 @@ export const SubCategories = () => {
 
     if(second != null && loading !== true && noPage !== true){
         return(
-            <div className="serch">
+            <>
                 <div className="mobileHeader">
                     <header className={`headerMobile`} >
                         <div className="logo">
@@ -99,46 +105,48 @@ export const SubCategories = () => {
                             </div>
                         }
                     </header>
-                    <article ref={ref} className={`Menu ${isVisible ? "openQuestion" : ""}`}>
-                        <div className="arrowKeyBack" onClick={() => setIsVisible(!isVisible)}>
-                            <img alt="" src={ Icons.arrowLeft } width={18} />
-                            <h5>Back</h5>
-                        </div>
-                        {
-                            second.subLinks.map((link, index) => {
-                                return(
-                                    isOpen && openSection === index ? <nav key={index}
-                                        className={"mobileQuestion"}
-                                        onClick={() => openAndClose(index)}
-                                    >
-                                        <div className="subCategory">
-                                            <h3> {link.title} </h3>
-                                            <img alt="" src={Icons.minus} width={15} />
-                                        </div>
-                                        {
-                                            link.subLinks.map((item, index) => {
-                                                return <Link to={`${link.title}/${item.id}`} key={index}
-                                                    className="subSubCategory"
-                                                >
-                                                    {item.title}
-                                                    <img alt="" src={Icons.arrowRighty} width={20}/>
-                                                </Link>
-                                            })
-                                        }
-                                    </nav> : <nav key={index}
-                                        className={"mobileQuestion"}
-                                        onClick={() => openAndClose(index)}
-                                    >
-                                        <div className="subCategory">
-                                            <h3> {link.title} </h3>
-                                            <img alt="" src={ Icons.plus } width={15} />
-                                        </div>
-                                    </nav>
-                                );
-                            })
-                        }
-                    </article>
-                    <div className={`mobileRowLinks`}>
+                    <div id="menu">
+                        <article ref={ref} className={`Menu ${isVisible ? "openQuestion" : ""}`}>
+                            <div className="arrowKeyBack" onClick={() => setIsVisible(!isVisible)}>
+                                <img alt="" src={ Icons.arrowLeft } width={18} />
+                                <h5>Back</h5>
+                            </div>
+                            {
+                                second.subLinks.map((link, index) => {
+                                    return(
+                                        isOpen && openSection === index ? <nav key={index}
+                                            className={"mobileQuestion"}
+                                            onClick={() => openAndClose(index)}
+                                        >
+                                            <div className="subCategory">
+                                                <h3> {link.title} </h3>
+                                                <img alt="" src={Icons.minus} width={15} />
+                                            </div>
+                                            {
+                                                link.subLinks.map((item, index) => {
+                                                    return <div onClick={() => setIsVisible(false)}  key={index}>
+                                                        <Link to={`${link.title}/${item.id}`} className="subSubCategory">
+                                                            {item.title}
+                                                            <img alt="" src={Icons.arrowRighty} width={20}/>
+                                                        </Link>
+                                                    </div>
+                                                })
+                                            }
+                                        </nav> : <nav key={index}
+                                            className={"mobileQuestion"}
+                                            onClick={() => openAndClose(index)}
+                                        >
+                                            <div className="subCategory">
+                                                <h3> {link.title} </h3>
+                                                <img alt="" src={ Icons.plus } width={15} />
+                                            </div>
+                                        </nav>
+                                    );
+                                })
+                            }
+                        </article>
+                    </div>
+                    <div className={`mobileRowLinks`} id="blurred">
                         <div className="mobileLists">
                             <img alt="" src={CategoryImages.option} onClick={() => setIsVisible(!isVisible)} />
                         </div>
@@ -187,7 +195,7 @@ export const SubCategories = () => {
                             </div>
                     }
                 </header>
-                <div className={`subCategoryLinks`} >
+                <div className={`subCategoryLinks`} id="blurr">
                     <aside className="questionsGrid">
                         <ContactSupport link={"/"}/>
                         {
@@ -227,7 +235,7 @@ export const SubCategories = () => {
                     <Outlet />
                 </div>
                 <Footer />
-            </div>
+            </>
         );
     } else if(loading !== true && noPage !== false) {
         return <NoPage />
@@ -360,7 +368,6 @@ export const AnswerDescription = () => {
                     </div>
                 </div>
                 <Markdown children={content} />
-                <div>Hi</div>
             </main>
         );
     } else if(loading !== true && (second == null || noPage !== false || fourth == null)) {

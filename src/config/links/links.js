@@ -1,5 +1,5 @@
 import { Icons } from "../assets"
-import { BusinessLinks } from "./business/main/business"
+// import { BusinessLinks } from "./business/main/business"
 import { ClientLinks } from "./clients/main/clients"
 import { ProviderLinks } from "./providers/main/providers"
 
@@ -19,14 +19,14 @@ export const SocialLinks = {
 }
 
 export const AppLinks = {
-    playStore: '/',
-    appleStore: '/',
-    providerPlayStore: '/',
-    providerAppleStore: '/',
-    signupProvider: '/',
-    loginProvider: '/',
-    signupUser: '/',
-    loginUser: '/'
+    playStore: 'https://www.serchservice.com/yet-to-launch',
+    appleStore: 'https://www.serchservice.com/yet-to-launch',
+    providerPlayStore: 'https://www.serchservice.com/yet-to-launch',
+    providerAppleStore: 'https://www.serchservice.com/yet-to-launch',
+    signupProvider: 'https://www.serchservice.com/yet-to-launch',
+    loginProvider: 'https://www.serchservice.com/yet-to-launch',
+    signupUser: 'https://www.serchservice.com/yet-to-launch',
+    loginUser: 'https://www.serchservice.com/yet-to-launch'
 }
 
 export const CompanyLinks = {

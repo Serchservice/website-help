@@ -1,30 +1,53 @@
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useRef } from "react";
 import '../css/searchbar.css';
 import { Icons } from '../../config/assets';
 
-export const SearchBar = ({ placeholder, data, category}) => {
+export const Download = ({playLink, appleLink}) => {
+    return(
+        <div className="serchGrey">
+            <h2>Log in/Get Started for a personal experience and support</h2>
+            <div className="flex">
+                <Link to={playLink}>Download from PlayStore</Link>
+                <Link to={appleLink}>Download from AppleStore</Link>
+            </div>
+        </div>
+    );
+}
+
+export const SearchBar = ({ placeholder, data }) => {
     const [results, setResults] = useState([])
     const [query, setQuery] = useState("")
+    const inputRef = useRef()
 
     const handleSearch = (event) => {
         event.preventDefault();
         let filteredData = [];
         //Iterating over the outermost array
-        for (let first = 0; first < data.length; first++){
-            for (let second = 0; second < data[first].length; second++){
-                for (let third = 0; third < data[first][second].length; third++){
-                    for (let fourth = 0; fourth < data[first][second][third].length; fourth++){
-                        if(Object.values(data[first][second][third][fourth].some(
-                            value => typeof value === 'string' && value.toLowerCase().includes(query.toLowerCase)
-                        ))){
-                            filteredData.push(data[first][second][third][fourth])
+        if(query !== "" || query !== null){
+            for (let first = 0; first < data.length; first++){
+                for (let second = 0; second < data[first].length; second++){
+                    for (let third = 0; third < data[first][second].length; third++){
+                        for (let fourth = 0; fourth < data[first][second][third].length; fourth++){
+                            if(Object.values(data[first][second][third][fourth].some(
+                                value => typeof value === 'string' && value.toLowerCase().includes(query.toLowerCase)
+                            ))){
+                                filteredData.push(data[first][second][third][fourth])
+                            }
                         }
                     }
                 }
             }
+            setResults(filteredData);
+        } else {
+            setResults([])
         }
-        setResults(filteredData);
+    }
+
+    const onChange = (e) => {
+        setQuery(e.target.value)
+        console.log(inputRef.current.value)
+        console.log(results)
     }
 
     return (
@@ -33,7 +56,7 @@ export const SearchBar = ({ placeholder, data, category}) => {
                 <div className="searchInput">
                     <div className="searchInputAndIcon">
                         <img alt="" src={ Icons.searchIcon } width={30} height={30}/>
-                        <input type="text" placeholder={placeholder} value={query} onChange={(e) => setQuery(e.target.value)} />
+                        <input type="text" placeholder={placeholder} value={query} onChange={onChange} ref={inputRef}/>
                     </div>
                     <img src={query.length === 0 ? "" : Icons.closeIcon} alt="" width={15} height={15} onClick={() => setQuery([])}/>
                 </div>
@@ -74,18 +97,6 @@ export const SearchBar = ({ placeholder, data, category}) => {
                     </div>
                 ))
             } */}
-        </div>
-    );
-}
-
-export const Download = ({playLink, appleLink}) => {
-    return(
-        <div className="serchGrey">
-            <h2>Log in/Get Started for a personal experience and support</h2>
-            <div className="flex">
-                <Link to={playLink}>Download from PlayStore</Link>
-                <Link to={appleLink}>Download from AppleStore</Link>
-            </div>
         </div>
     );
 }

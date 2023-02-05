@@ -43,3 +43,41 @@
 .menuOpen{
     opacity: 0;
 }
+
+.DropDown{
+    position: absolute;
+    padding: 0rem 0.2rem;
+    text-align: left;
+    align-items: flex-start;
+    right: 2vw;
+    top: 1.3vh;
+    justify-content: space-evenly;
+    display: flex;
+    border-radius: 0rem;
+    flex-wrap: wrap;
+    width: 11rem;
+    cursor: pointer;
+    background-color: var(--serch-white-bg);
+    box-shadow: var(--serch-box-shadow);
+    transition: all .8s ease-out;
+}
+
+.closeDrop{
+    overflow: hidden;
+    height: 2.5rem;
+}
+
+.openDrop{
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    height: 100vh;
+    width: 100vw;
+    right: 0vw;
+    top: 0vh;
+}
+
+.openDrop img{
+    margin-left: 1rem;
+    padding-bottom: 5rem;
+}
