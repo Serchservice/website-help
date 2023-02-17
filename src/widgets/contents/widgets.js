@@ -82,7 +82,7 @@ export const Footer = () => {
             <div className='external-links' style={{
                 display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between"
             }}>
-                <div style={{
+                <div className='app' style={{
                     display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between",
                 }}>{
                     SerchAppDownloadLinks.map((item, index) => {
@@ -91,7 +91,7 @@ export const Footer = () => {
                         </a>
                     })
                 }</div>
-                <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between"}}>{
+                <div className='socialmedia' style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between"}}>{
                     SocialMediaLinks.map((item, index) => {
                         return <a href={item.link} key={index} style={{padding: "0.2rem"}}>
                             <img alt={item.imageAlt} src={item.image} className="external-links-social" />
@@ -99,8 +99,8 @@ export const Footer = () => {
                     })
                 }</div>
             </div>
-            <div style={{alignItems: "center", textAlign: "center"}}>
-                <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", marginTop: "0.8rem"}}>{
+            <div  style={{alignItems: "center", textAlign: "center"}}>
+                <div  style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", marginTop: "0.8rem"}}>{
                     FooterDocumentLinks.map((item, index) => {
                         return <a href={item.link} style={{
                             color: "#bdbdbd",

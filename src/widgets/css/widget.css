@@ -82,6 +82,30 @@ header h2{
         width: 20px;
         height: 20px;
     }
+    .app{
+        /* background-color: red; */
+        flex-direction: row;
+        text-align: start;
+    }
+    .app  img {
+        width: 7.5rem;
+        height: 3.125rem;
+        padding: 0.2rem;
+        /* margin: 0; */
+    }
+    .socialmedia {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+    }
+    
+    .socialmedia img {
+        width: 30px;
+        height: 30px;
+        padding: 0.2rem;
+        /* margin: 0rem 0.2rem; */
+    }
 }
 
 @media screen and (max-width: 480px){
