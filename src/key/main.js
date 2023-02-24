@@ -91,8 +91,7 @@ export const HelpCategoriesIndex = () => {
                 <div className="keyHeader">
                     <div className="keyHead">
                         {
-                            open
-                            ?   <div className={open ? 'open dropdown' : "close dropdown"} onClick={()=>setOpen(!open)}>
+                            open ?   <div className={open ? 'open dropdown' : "close dropdown"} onClick={()=>setOpen(!open)}>
                                 {
                                     help.title === 'Request/Clients'
                                     ?   <div className="menu">
@@ -117,16 +116,10 @@ export const HelpCategoriesIndex = () => {
                             :   <div className={open ? 'open dropdown' : "close dropdown"} onClick={()=>setOpen(!open)}>
                                 {
                                     help.title === 'Request/Clients'
-                                    ?   <div className="menu">
-                                            <article className="menuLink">{help.title}</article>
-                                        </div>
+                                    ?   <article className="menuLink">{help.title}</article>
                                     : help.title === 'Provide/Providers'
-                                    ?   <div className="menu">
-                                            <article className="menuLink">{help.title}</article>
-                                        </div>
-                                    :   <div className="menu">
-                                            <article className="menuLink">{help.title}</article>
-                                        </div>
+                                    ?   <article className="menuLink">{help.title}</article>
+                                    :   <article className="menuLink">{help.title}</article>
                                 }
                                 <img alt="arrow" src={ open ? Icons.arrowUp : Icons.arrowDown } width={18} className="menuArrow"/>
                             </div>

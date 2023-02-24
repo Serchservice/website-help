@@ -98,9 +98,7 @@ export const SubCategories = () => {
                                 }
                                 <img alt="arrow" src={Icons.arrowUp} width={18} className="menuArrow"/>
                             </div> : <div className={"closeDrop DropDown"} onClick={()=>setOpen(!open)}>
-                                <div className="menu">
-                                    <article className="menuLink">{first.title}</article>
-                                </div>
+                                <article className="menuLink">{first.title}</article>
                                 <img alt="arrow" src={Icons.arrowDown} width={18} className="menuArrow" />
                             </div>
                         }
@@ -185,12 +183,9 @@ export const SubCategories = () => {
                                 <img alt="arrow" src={ open ? Icons.arrowUp : Icons.closeIcon } width={18} className="menuArrow"/>
                             </div>
                         :   <div className={open ? 'openDrop DropDown' : "closeDrop DropDown"} onClick={()=>setOpen(!open)}>
-                                <div className="menu">
-                                    <article className="menuLink">{first.title}</article>
-                                </div>
+                                <article className="menuLink">{first.title}</article>
                                 <img alt="arrow"
-                                    src={ open ? Icons.closeIcon : Icons.arrowDown }
-                                    width={18} className="menuArrow"
+                                    src={ open ? Icons.closeIcon : Icons.arrowDown } width={18} className="menuArrow"
                                 />
                             </div>
                     }

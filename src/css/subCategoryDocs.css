@@ -1,4 +1,5 @@
 @import url(../config/colors.css);
+
 #menu{
     position: relative;
     /* z-index: 999; */
@@ -14,7 +15,7 @@
     .subCategoryLinks{
         display: flex;
         width: 100%;
-        padding: 0rem 1rem 0rem 1rem;
+        padding: 0rem 0.2rem 0rem 1rem;
     }
 
     .subCategoryLinks main{
@@ -24,13 +25,17 @@
     .questionsGrid{
         padding-right: 1rem;
         margin-right: 1rem;
-        overflow-y: scroll;
+        width: 500px;
         border-right: 2px solid var(--serch-black-bg);
     }
 
     /* width */
     .questionsGrid::-webkit-scrollbar {
-        width: 5px;
+        width: 4px;
+    }
+
+    .answersGrid::-webkit-scrollbar {
+        width: 7px;
     }
 
     /* Track */
@@ -39,17 +44,17 @@
     } */
 
     /* Handle */
-    .questionsGrid::-webkit-scrollbar-thumb {
+    .questionsGrid::-webkit-scrollbar-thumb, .answersGrid::-webkit-scrollbar-thumb {
         background: var(--serch-dark-theme);
         border-radius: 1rem;
     }
 
     /* Handle on hover */
-    .questionsGrid::-webkit-scrollbar-thumb:hover {
+    .questionsGrid::-webkit-scrollbar-thumb:hover, .answersGrid::-webkit-scrollbar-thumb:hover {
         background: var(--serch-dark-purple);
     }
 
-    .questionsGrid::-webkit-scrollbar-thumb:hover .questionsGrid::-webkit-scrollbar {
+    .questionsGrid::-webkit-scrollbar-thumb:hover .questionsGrid::-webkit-scrollbar, .answersGrid::-webkit-scrollbar-thumb:hover .answersGrid::-webkit-scrollbar {
         width: 10px;
     }
 
@@ -62,10 +67,13 @@
 
     .questionsGrid, .answersGrid{
         padding-top: 1rem;
+        height: 100vh;
+        overflow-y:auto;
     }
 
     .answersGrid{
         width: 100%;
+        padding-right: 1rem;
     }
 
     .answersGrid .rowLinks{
@@ -160,9 +168,9 @@
         border-radius: 0rem;
         flex-wrap: wrap;
         max-width: 20rem;
-        height: 92.1%;
+        height: 100%;
         left: -200%;
-        top: 7.9%;
+        top: 0%;
         z-index: 99999;
         overflow-y: auto;
         background-color: var(--serch-white-bg);

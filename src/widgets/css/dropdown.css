@@ -17,8 +17,8 @@
 }
 
 .close{
-    overflow: hidden;
-    height: 3rem;
+    padding: 0.5rem 1rem;
+    display: flex;
 }
 
 .open{
@@ -49,8 +49,8 @@
     padding: 0rem 0.2rem;
     text-align: left;
     align-items: flex-start;
-    right: 2vw;
-    top: 1.3vh;
+    right: 1vw;
+    top: 1.5vh;
     justify-content: space-evenly;
     display: flex;
     border-radius: 0rem;
@@ -63,8 +63,8 @@
 }
 
 .closeDrop{
-    overflow: hidden;
-    height: 2.5rem;
+    padding: 0rem 0.5rem;
+    display: flex;
 }
 
 .openDrop{

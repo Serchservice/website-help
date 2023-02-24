@@ -148,7 +148,7 @@
     border-bottom: 2px solid var(--serch-black-bg);
     cursor: pointer;
     width: auto;
-    position: relative;
+    /* position: relative; */
     padding-bottom: 0.2rem;
     margin-bottom: 1.5rem;
 }
