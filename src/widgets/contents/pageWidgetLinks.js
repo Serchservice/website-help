@@ -76,12 +76,10 @@ export const SerchAppDownloadLinks = [{
     image: Images.app.playStore,
     imageAlt: 'Serch Mobile App Playstore Android',
     link: AppLinks.playStore,
-    height: "65px"
 },{
     image: Images.app.appleStore,
     imageAlt: 'Serch Mobile App AppleStore iOS',
     link: AppLinks.appleStore,
-    height: "65px"
 }]
 
 export const SocialMediaLinks = [{

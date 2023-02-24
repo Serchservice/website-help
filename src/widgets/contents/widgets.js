@@ -87,7 +87,7 @@ export const Footer = () => {
                 }}>{
                     SerchAppDownloadLinks.map((item, index) => {
                         return <a href={item.link} key={index} style={{padding: "0.2rem"}}>
-                            <img alt={item.imageAlt} src={item.image} height={item.height} style={{width: "100%"}} />
+                            <img className="downloadImage" alt={item.imageAlt} src={item.image} style={{width: "100%"}} />
                         </a>
                     })
                 }</div>
