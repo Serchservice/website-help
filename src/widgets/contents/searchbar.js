@@ -55,10 +55,10 @@ export const SearchBar = ({ placeholder, data }) => {
             <div className="searchBox">
                 <div className="searchInput">
                     <div className="searchInputAndIcon">
-                        <img alt="" src={ Icons.searchIcon } width={30} height={30}/>
+                        <img alt="" src={ Icons.searchIcon } width={25} height={25}/>
                         <input type="text" placeholder={placeholder} value={query} onChange={onChange} ref={inputRef}/>
                     </div>
-                    <img src={query.length === 0 ? "" : Icons.closeIcon} alt="" width={15} height={15} onClick={() => setQuery([])}/>
+                    { query.length !== 0 ? <img src={Icons.closeIcon} alt="" width={15} height={15} onClick={() => setQuery([])}/> : null}
                 </div>
                 <div className="searchBtn" onClick={handleSearch}>
                     <h3>Search</h3>
