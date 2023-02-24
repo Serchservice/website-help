@@ -58,7 +58,7 @@ export const SearchBar = ({ placeholder, data }) => {
                         <img alt="" src={ Icons.searchIcon } width={25} height={25}/>
                         <input type="text" placeholder={placeholder} value={query} onChange={onChange} ref={inputRef}/>
                     </div>
-                    { query.length !== 0 ? <img src={Icons.closeIcon} alt="" width={15} height={15} onClick={() => setQuery([])}/> : null}
+                    { query.length !== 0 ? <img src={Icons.closeIcon} alt="" width={15} height={15} onClick={() => setQuery([])}/> : null }
                 </div>
                 <div className="searchBtn" onClick={handleSearch}>
                     <h3>Search</h3>
