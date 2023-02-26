@@ -5,8 +5,7 @@ import { Link, Outlet, useParams } from "react-router-dom";
 import Markdown from 'markdown-to-jsx';
 import { CategoryImages, Icons, Images } from "../config/assets";
 import { HelpCategoryLinks, HelpLinks, MainLinks } from "../config/links/links";
-import { Title } from "../config/custom/titleheader";
-import { Footer } from "../widgets/contents/widgets";
+import { Footer, Title } from "../widgets/contents/widgets";
 import { NoPage } from "./main";
 import { ContactSupport } from '../widgets/container/link';
 import { AnswerPageShimmer, CategoryPageShimmer } from '../widgets/contents/shimmer';
@@ -83,12 +82,12 @@ export const SubCategories = () => {
                                     first.title === "Request/Clients" ? <div className="menu">
                                         <Link to={`/${first.id}`} className="menuLink">{first.title}</Link>
                                         <Link to={`/${HelpLinks.providers}`} className="menuLink">Provide/Providers</Link>
-                                        <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
+                                        {/* <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link> */}
                                     </div>
                                     : first.title === "Provide/Providers" ? <div className="menu">
                                         <Link to={`/${first.id}`} className="menuLink">{first.title}</Link>
                                         <Link to={`/${HelpLinks.clients}`} className="menuLink">Request/Clients</Link>
-                                        <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
+                                        {/* <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link> */}
                                     </div>
                                     : <div className="menu">
                                         <Link to={`/${first.id}`} className="menuLink">{first.title}</Link>
@@ -167,17 +166,17 @@ export const SubCategories = () => {
                                     first.title === "Request/Clients" ? <div className="menu">
                                         <Link to={`/${first.id}`} className="menuLink">{first.title}</Link>
                                         <Link to={`/${HelpLinks.providers}`} className="menuLink">Provide/Providers</Link>
-                                        <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
+                                        {/* <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link> */}
                                     </div>
                                     : first.title === "Provide/Providers" ? <div className="menu">
                                         <Link to={`/${first.id}`} className="menuLink">{first.title}</Link>
                                         <Link to={`/${HelpLinks.clients}`} className="menuLink">Request/Clients</Link>
-                                        <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
+                                        {/* <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link> */}
                                     </div>
                                     : <div className="menu">
                                         <Link to={`/${first.id}`} className="menuLink">{first.title}</Link>
                                         <Link to={`/${HelpLinks.providers}`} className="menuLink">Provide/Providers</Link>
-                                        <Link to={`/${HelpLinks.clients}`} className="menuLink">Request/Clients</Link>
+                                        {/* <Link to={`/${HelpLinks.clients}`} className="menuLink">Request/Clients</Link> */}
                                     </div>
                                 }
                                 <img alt="arrow" src={ open ? Icons.arrowUp : Icons.closeIcon } width={18} className="menuArrow"/>

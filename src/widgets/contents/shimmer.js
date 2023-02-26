@@ -1,5 +1,4 @@
-import { Title } from "../../config/custom/titleheader";
-import { Footer, Header } from "./widgets";
+import { Footer, Header, Title } from "./widgets";
 import '../css/shimmer.css';
 
 export const FullPageShimmer = () => {

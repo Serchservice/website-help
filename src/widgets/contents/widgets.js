@@ -4,6 +4,14 @@ import { AppLinks, MainLinks } from '../../config/links/links';
 import { Images } from '../../config/assets';
 import { FooterDocumentLinks, FooterLinks, SerchAppDownloadLinks, SocialMediaLinks } from './pageWidgetLinks';
 
+export const Title = (newTitle) => {
+    return document.title = newTitle;
+}
+
+// export const TitleImage = (img) => {
+//     return document.linksl; = img;
+// }
+
 export const Header = ({pagetitle, pagedescription}) => {
     return (
         <header style={{backgroundColor: "#030001", padding: pagetitle ? "0.8rem 0.9rem" : ""}}>
@@ -35,11 +43,11 @@ export const Footer = () => {
                 <img alt='Serch Tagline' src={ Images.serch.serchTagline }
                     style={{width: "150px", borderRadius: "0.8rem"}} className="upper-tagline"
                 />
-                <Link to={ MainLinks.home }>
+                <a href={ MainLinks.home }>
                     <img alt='Serch Logo' src={ Images.serch.serchLogoName } style={{
                         width: "150px", borderRadius: "0.8rem"
                     }} />
-                </Link>
+                </a>
                 <img alt='Serch Tagline' src={ Images.serch.serchTagline }
                     style={{width: "150px", borderRadius: "0.8rem"}} className="lower-tagline"
                 />
@@ -56,7 +64,7 @@ export const Footer = () => {
                             <h2 style={{color: "#bdbdbd"}}>{item.section}</h2>
                             {
                             item.link.map((item, index) => {
-                                if(index === 1 || index === 3 || index === 4){
+                                if(index !== 1){
                                     return <a href={ item.link } key={index} className="pageLink">{item.title}</a>
                                 } else {
                                     return <Link to={ item.link } key={index} className="pageLink">{item.title}</Link>
@@ -72,7 +80,7 @@ export const Footer = () => {
                             <h2 style={{color: "#bdbdbd"}}>{item.section}</h2>
                             {
                                 item.link.map((item, index) => {
-                                    return <Link to={ item.link } key={index} className="pageLink">{item.title}</Link>
+                                    return <a href={ item.link } key={index} className="pageLink">{item.title}</a>
                                 })
                             }
                         </div>
@@ -93,9 +101,9 @@ export const Footer = () => {
                 }</div>
                 <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between"}}>{
                     SocialMediaLinks.map((item, index) => {
-                        return <a href={item.link} key={index} style={{padding: "0.2rem"}}>
-                            <img alt={item.imageAlt} src={item.image} className="external-links-social" />
-                        </a>
+                        return <a href={item.link} key={index} style={{padding: "0.2rem"}} target="_blank" rel="noopener noreferrer">
+                        <img alt={item.imageAlt} src={item.image} className="external-links-social" style={{filter: "brightness(0) invert(1)"}} />
+                    </a>
                     })
                 }</div>
             </div>

@@ -86,11 +86,13 @@ export const SocialMediaLinks = [{
     image: Images.social.twitter,
     imageAlt: 'Serch Twitter Link',
     link: SocialLinks.twitter,
-},{
-    image: Images.social.facebook,
-    imageAlt: 'Serch Facebook Link',
-    link: SocialLinks.facebook,
-},{
+},
+// {
+//     image: Images.social.facebook,
+//     imageAlt: 'Serch Facebook Link',
+//     link: SocialLinks.facebook,
+// },
+{
     image: Images.social.gmail,
     imageAlt: 'Serch Email Link',
     link: Emails.help,
@@ -102,6 +104,14 @@ export const SocialMediaLinks = [{
     image: Images.social.linkedIn,
     imageAlt: 'Serch LinkedIn Link',
     link: SocialLinks.linkedIn,
+},{
+    image: Images.social.youtube,
+    imageAlt: 'Serch Youtube Link',
+    link: SocialLinks.youtube,
+},{
+    image: Images.social.tiktok,
+    imageAlt: 'Serch Tiktok Link',
+    link: SocialLinks.tiktok,
 }]
 
 export const FooterDocumentLinks = [{

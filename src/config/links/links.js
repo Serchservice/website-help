@@ -12,10 +12,12 @@ export const MainLinks = {
 }
 
 export const SocialLinks = {
-    twitter: 'https://www.twitter.com/serchservice/',
-    facebook: 'https://www.facebook.com/serchservice/',
-    instagram: 'https://www.instagram.com/serchservice/',
-    linkedIn: 'https://www.linkedin.com/company/serchservice/'
+    twitter: 'https://www.twitter.com/serchservice',
+    facebook: 'https://www.facebook.com/serchservice',
+    instagram: 'https://www.instagram.com/serchservice',
+    linkedIn: 'https://www.linkedin.com/company/serchservice',
+    youtube: "https://www.youtube.com/@serchservice",
+    tiktok: "https://www.tiktok.com/@serchservice?_t=8aCbuvkB7Sv&_r=1",
 }
 
 export const AppLinks = {

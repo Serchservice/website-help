@@ -2,8 +2,7 @@ import { Link, useParams, Outlet } from "react-router-dom";
 import {
     AppLinks, CompanyLinks, HelpCategoryLinks, HelpLinks, InformationLinks, MainLinks, ProductLinks, SupportLinks
 } from "../config/links/links";
-import { Title } from "../config/custom/titleheader";
-import { Footer, Header } from "../widgets/contents/widgets";
+import { Footer, Header, Title } from "../widgets/contents/widgets";
 import '../css/404.css';
 import { HelpHomeBody, HelpHomeHeader } from "./home";
 import { useEffect, useState } from "react";
@@ -97,13 +96,13 @@ export const HelpCategoriesIndex = () => {
                                     ?   <div className="menu">
                                             <Link to={`/${help.id}`} className="menuLink">{help.title}</Link>
                                             <Link to={`/${HelpLinks.providers}`} className="menuLink">Provide/Providers</Link>
-                                            <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
+                                            {/* <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link> */}
                                         </div>
                                     : help.title === 'Provide/Providers'
                                     ?   <div className="menu">
                                             <Link to={`/${help.id}`} className="menuLink">{help.title}</Link>
                                             <Link to={`/${HelpLinks.clients}`} className="menuLink">Request/Clients</Link>
-                                            <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link>
+                                            {/* <Link to={`/${HelpLinks.business}`} className="menuLink">Business</Link> */}
                                         </div>
                                     :   <div className="menu">
                                             <Link to={`/${help.id}`} className="menuLink">{help.title}</Link>
