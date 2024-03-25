@@ -93,6 +93,10 @@ We welcome contributions from the community to help improve and expand our docum
 
 Encountered a bug or technical issue? Please report it to our team by opening an issue in this repository. Be sure to provide detailed information about the problem you're experiencing, including steps to reproduce it and any error messages you've encountered.
 
+- [x] #739
+- [ ] https://github.com/octo-org/octo-repo/issues/740
+- [ ] Add delight to the experience when all tasks are complete :tada:
+
 ---
 
 Thank you for choosing Serch! We're dedicated to providing exceptional service and support to our users, providers, and businesses. If you have any further questions or feedback, don't hesitate to reach out to us. Happy Serching!
