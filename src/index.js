@@ -1,17 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './css/index.css';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+import './style.css'
 import reportWebVitals from './reportWebVitals';
-import App from './routes/App';
+import ScrollToTop from './api/ScrollToTop';
+import Home from './views/home/Home';
+import Links from './config/Links';
+import CategoryPage from './views/category/CategoryPage';
+import Category from './views/category/Category';
+import Search from './views/search/Search';
+import SectionPage from './views/section/SectionPage';
+import Section from './views/section/states/Section';
+import Help from './views/section/help/Help';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const App = () => {
+    return (
+        <Router>
+            <ScrollToTop>
+                <Routes>
+                    <Route element={ <Home /> } exact path={ Links.home } />
+                    <Route element={ <Search /> } path={ Links.search } />
+                    <Route path={ Links.category } element={ <CategoryPage /> }>
+                        <Route index element={ <Category /> }/>
+                        <Route path={ Links.section } element={ <SectionPage /> }>
+                            <Route index element={ <Section /> }/>
+                            <Route path={ Links.faq } element={ <Help /> } />
+                        </Route>
+                    </Route>
+                </Routes>
+            </ScrollToTop>
+        </Router>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(
-  <React.StrictMode>
     <App />
-  </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
