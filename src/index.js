@@ -13,12 +13,14 @@ import Search from './views/search/Search';
 import SectionPage from './views/section/SectionPage';
 import Section from './views/section/states/Section';
 import Help from './views/section/help/Help';
+import Error from './views/error/Error';
 
 const App = () => {
     return (
         <Router>
             <ScrollToTop>
                 <Routes>
+                    <Route element={ <Error /> } path="*" />
                     <Route element={ <Home /> } exact path={ Links.home } />
                     <Route element={ <Search /> } path={ Links.search } />
                     <Route path={ Links.category } element={ <CategoryPage /> }>
