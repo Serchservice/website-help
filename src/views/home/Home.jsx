@@ -8,6 +8,7 @@ import Shimmer from '../../components/shimmer/Shimmer'
 import ApiService from '../../api/ApiService';
 import Header from '../../components/header/Header';
 import ItemGenerator from '../../config/ItemGenerator';
+import Assets from '../../assets/Assets';
 
 const Home = () => {
     const [ isLoading, setIsLoading ] = useState(true)
@@ -39,6 +40,7 @@ const Home = () => {
                     property="og:description"
                     content="We connect you to mechanics, electricians, plumbers and carpenters that are closer to you. Request, Provide, Earn."
                 />
+                <meta property="og:image" content={ Assets.logo } />
             </Helmet>
             <Header />
             <div className="home-body">

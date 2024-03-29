@@ -1,6 +1,7 @@
 import React from 'react'
 import Assets from '../../assets/Assets'
 import './footer.css'
+import Links from '../../config/Links';
 
 const Footer = () => {
     const footerLinks = [
@@ -9,23 +10,23 @@ const Footer = () => {
             "children": [
                 {
                     "key": "About Us",
-                    "link": ""
+                    "link": Links.aboutUs
                 },
                 {
                     "key": "Blog",
-                    "link": ""
+                    "link": Links.blogs
                 },
                 {
                     "key": "Newsroom",
-                    "link": ""
+                    "link": Links.newsroom
                 },
                 {
                     "key": "Marketplace",
-                    "link": ""
+                    "link": Links.marketplace
                 },
                 {
                     "key": "Careers",
-                    "link": ""
+                    "link": Links.careers
                 },
             ]
         },
@@ -34,23 +35,23 @@ const Footer = () => {
             "children": [
                 {
                     "key": "Request",
-                    "link": ""
+                    "link": Links.request
                 },
                 {
                     "key": "Provide",
-                    "link": ""
+                    "link": Links.provide
                 },
                 {
                     "key": "Business",
-                    "link": ""
+                    "link": Links.business
                 },
                 {
                     "key": "Guest",
-                    "link": ""
+                    "link": Links.guest
                 },
                 {
                     "key": "Tip2Fix",
-                    "link": ""
+                    "link": Links.tip2fix
                 },
             ]
         },
@@ -59,11 +60,11 @@ const Footer = () => {
             "children": [
                 {
                     "key": "Safety Guidelines",
-                    "link": ""
+                    "link": Links.safety
                 },
                 {
                     "key": "Countries In Serch",
-                    "link": ""
+                    "link": Links.countries
                 },
             ]
         },
@@ -72,11 +73,11 @@ const Footer = () => {
             "children": [
                 {
                     "key": "Legal Hub",
-                    "link": ""
+                    "link": Links.legal
                 },
                 {
                     "key": "Support Hub",
-                    "link": ""
+                    "link": Links.support
                 },
             ]
         },
@@ -84,22 +85,22 @@ const Footer = () => {
 
     const socialLinks = [
         {
-            "link": 'https://www.linkedin.com/company/serchservice',
+            "link": Links.linkedIn,
             "alt": "LinkedIn",
             "icon": Assets.linkedInIcon,
         },
         {
-            "link": 'https://www.instagram.com/serchservice',
+            "link": Links.instagram,
             "alt": "Instagram",
             "icon": Assets.instagramIcon,
         },
         {
-            "link": 'https://www.x.com/serchservice',
+            "link": Links.twitter,
             "alt": "Twitter",
             "icon": Assets.twitterIcon,
         },
         {
-            "link": 'https://www.youtube.com/@serchservice',
+            "link": Links.youtube,
             "alt": "YouTube",
             "icon": Assets.youtubeIcon,
         }
@@ -108,15 +109,15 @@ const Footer = () => {
     const footerCopyright = [
         {
             "name": "Terms and Conditions",
-            "link": "https://legal.serchservice.com"
+            "link": Links.termsAndConditions
         },
         {
             "name": "Accessibility",
-            "link": "https://legal.serchservice.com"
+            "link": Links.accessibility
         },
         {
             "name": "Privacy",
-            "link": "https://legal.serchservice.com"
+            "link": Links.privacyPolicy
         }
     ]
 
@@ -126,7 +127,7 @@ const Footer = () => {
                 <main className="footer-main-content">
                     <div className="footer-container">
                         <div className="footer-header">
-                            <a href="https://www.serchservice.com" className="footer-link">
+                            <a href={ Links.serch } className="footer-link">
                                 <img alt="Logo" src={Assets.lightLogo200} className="footer-branding mouse"/>
                             </a>
                             <img alt="Service made easy" src={Assets.tagWhite} className="footer-image"/>

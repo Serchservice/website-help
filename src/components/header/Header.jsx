@@ -2,35 +2,36 @@ import React, { useState } from 'react'
 import './header.css'
 import Assets from '../../assets/Assets'
 import { Link } from 'react-router-dom'
+import Links from '../../config/Links'
 
 const Header = () => {
     const [ open, setOpen ] = useState(false)
     const topLinks = [
         {
-            "link": "",
+            "link": Links.aboutUs,
             "name": "About Us"
         },
         {
-            "link": "",
+            "link": Links.blogs,
             "name": "Blog"
         },
         {
-            "link": "",
+            "link": Links.newsroom,
             "name": "Newsroom"
         },
         {
-            "link": "",
+            "link": Links.marketplace,
             "name": "Marketplace"
         },
         {
-            "link": "",
+            "link": Links.careers,
             "name": "Careers"
         },
     ]
 
     const bottomLinks = [
         {
-            "link": "",
+            "link": Links.home,
             "name": "Help"
         },
         {
@@ -46,7 +47,7 @@ const Header = () => {
     return (
         <div className={"navbar-interactive-container"}>
             <header data-thq="thq-navbar" className="navbar-interactive-navbar-interactive">
-                <a href="https://www.serchservice.com" className="navbar-interactive-link">
+                <a href={ Links.serch } className="navbar-interactive-link">
                     <img alt="Serch" src={ Assets.lightLogo1500 } className="navbar-interactive-image mouse" />
                 </a>
                 <div data-thq="thq-navbar-nav" className="navbar-interactive-desktop-menu">
@@ -112,11 +113,11 @@ const Header = () => {
                         <div className="navbar-interactive-buttons"></div>
                         <div className="navbar-interactive-ios button">
                             <img alt="Play Store" src={ Assets.android } className="navbar-interactive-icon3"/>
-                            <span className="navbar-interactive-text">Download for Android</span>
+                            <span className="navbar-interactive-text">Coming soon</span>
                         </div>
                         <div className="navbar-interactive-android button">
                             <img alt="Apple Store" src={ Assets.apple } className="navbar-interactive-icon3"/>
-                            <span className="navbar-interactive-text">Download for iOS</span>
+                            <span className="navbar-interactive-text">Coming soon</span>
                         </div>
                     </div>
                 </div>
